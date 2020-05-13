@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    RigidBody obj;
+    //RigidBody obj;
     // Start is called before the first frame update
     void Start()
     {
