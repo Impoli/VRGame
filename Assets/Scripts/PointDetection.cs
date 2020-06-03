@@ -48,7 +48,8 @@ public class PointDetection : MonoBehaviour
             if (other.tag == "block")
             {
                 points += other.GetComponent<BlockPoints>().Points;
-                Debug.Log("Points: " + points);
+                GameObject pt = GameObject.Find("PointsText");
+                pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
             }
 
         }
