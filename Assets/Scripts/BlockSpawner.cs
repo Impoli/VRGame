@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockSpawner : MonoBehaviour
 {
-    public GameObject block1;
+    public GameObject allBlocks;
 
     private GameObject spawnTrigger1;
     private GameObject spawnTrigger2;
@@ -12,6 +12,7 @@ public class BlockSpawner : MonoBehaviour
     private Transform parent;
 
     private float deltaSum = 0;
+    private GameObject[] usedBlocks;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,11 @@ public class BlockSpawner : MonoBehaviour
         spawnTrigger3 = GameObject.Find("SpawnTrigger3");
         parent = GameObject.Find("SpawnedBlocks").transform;
 
+        usedBlocks = new GameObject[allBlocks.transform.childCount];
+        for (int i = 0; i < allBlocks.transform.childCount; i++ )
+        {
+            usedBlocks[i] = allBlocks.transform.GetChild(i).gameObject;
+        }
        
     }
 
@@ -32,27 +38,30 @@ public class BlockSpawner : MonoBehaviour
         if (spawnTrigger1.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= 0.5f)
         {
             deltaSum = 0;
-            GameObject newBlock = Instantiate(block1, parent);
-            Vector3 pos = spawnTrigger1.transform.position;
-            newBlock.transform.position = new Vector3(pos.x, pos.y + 0.5f, pos.z);
+            SpawnBlock(spawnTrigger1);
         }
 
 
         if (spawnTrigger2.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= 0.5f)
         {
             deltaSum = 0;
-            GameObject newBlock = Instantiate(block1, parent);
-            Vector3 pos = spawnTrigger2.transform.position;
-            newBlock.transform.position = new Vector3(pos.x, pos.y + 0.5f, pos.z);
+            SpawnBlock(spawnTrigger2);
         }
 
             if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= 0.5f)
         {
             deltaSum = 0;
-            GameObject newBlock = Instantiate(block1, parent);
-            Vector3 pos = spawnTrigger3.transform.position;
-            newBlock.transform.position = new Vector3(pos.x, pos.y + 0.5f, pos.z);
+            SpawnBlock(spawnTrigger3);
         }
 
+    }
+
+    void SpawnBlock(GameObject trigger)
+    {
+        int blockNum = Random.Range(0, usedBlocks.Length);
+
+        GameObject newBlock = Instantiate(usedBlocks[blockNum], parent);
+        Vector3 pos = trigger.transform.position;
+        newBlock.transform.position = new Vector3(pos.x, pos.y + 0.5f, pos.z);
     }
 }

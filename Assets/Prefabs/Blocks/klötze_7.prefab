@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7322884619440757485}
   - component: {fileID: 3935184723541485076}
   - component: {fileID: 6737858600534182906}
-  - component: {fileID: 6737858600534182853}
   - component: {fileID: 6737858600534182852}
+  - component: {fileID: 1951599522668909985}
   m_Layer: 0
   m_Name: "kl\xF6tze_7"
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3359759696384348872}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.8240585, y: -0.6827128, z: -25.583061}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 6737858599646162506}
@@ -99,19 +99,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6737858600534182853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3359759696384348872}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.004000785, y: 0.0010000002, z: 0.0010000004}
-  m_Center: {x: -0.0000023340112, y: 0, z: 0}
 --- !u!114 &6737858600534182852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +173,19 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!65 &1951599522668909985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359759696384348872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004000785, y: 0.0010000002, z: 0.0010000004}
+  m_Center: {x: -0.0000023340112, y: 0, z: 0}
 --- !u!1 &6737858599646162517
 GameObject:
   m_ObjectHideFlags: 0
