@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5408713583028572738}
   - component: {fileID: 5408713583028572739}
   - component: {fileID: 5408713583028572736}
+  - component: {fileID: -6620384885690859755}
   m_Layer: 0
   m_Name: "kl\xF6tze_1"
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +187,19 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &-6620384885690859755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048297697259604806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0846cd971c7234390c5c1c95225545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: 35
 --- !u!1 &5408713582082801172
 GameObject:
   m_ObjectHideFlags: 0

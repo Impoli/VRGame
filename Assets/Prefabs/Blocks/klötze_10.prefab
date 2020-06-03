@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 5874282134553102455}
   - component: {fileID: 1856737376}
   - component: {fileID: 1856737375}
+  - component: {fileID: 3062946192454499044}
   m_Layer: 0
   m_Name: "kl\xF6tze_10"
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +201,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.002976036, y: 0.0010000002, z: 0.0010115688}
   m_Center: {x: 5.9604643e-10, y: 0, z: -0.0000017014518}
+--- !u!114 &3062946192454499044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496200821851115889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0846cd971c7234390c5c1c95225545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: 50
 --- !u!1 &5874282134862885272
 GameObject:
   m_ObjectHideFlags: 0

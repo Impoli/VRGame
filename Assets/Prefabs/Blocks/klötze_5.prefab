@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 394401316414925736}
   - component: {fileID: 394401316414925738}
   - component: {fileID: 7182432905609384781}
+  - component: {fileID: 6964033532130732495}
   m_Layer: 0
   m_Name: "kl\xF6tze_5"
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,3 +218,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5053925668127403250, guid: 3d24048ae06869c498f3b647a7974b06, type: 3}
+--- !u!114 &6964033532130732495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527808878808986284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0846cd971c7234390c5c1c95225545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: 30
