@@ -200,6 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 35
+  errorMaterial: {fileID: 2100000, guid: b841cf2e7d234fe4ab664ebc7e4c1684, type: 2}
+  standartMaterial: {fileID: 2100000, guid: 0908692ebbf58e1488c3afdd3906b755, type: 2}
 --- !u!1 &5408713582082801172
 GameObject:
   m_ObjectHideFlags: 0
