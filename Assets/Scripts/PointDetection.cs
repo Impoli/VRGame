@@ -45,7 +45,7 @@ public class PointDetection : MonoBehaviour
 
         if (startPointDetection)
         {
-            if (other.tag == "block")
+            if (other.tag == "block" && !other.GetComponent<BlockPoints>().getIsInErrorPosition())
             {
                 points += other.GetComponent<BlockPoints>().Points;
                 GameObject pt = GameObject.Find("PointsText");

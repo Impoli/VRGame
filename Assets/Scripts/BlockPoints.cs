@@ -26,6 +26,11 @@ public class BlockPoints : MonoBehaviour
         }
     }
 
+    public bool getIsInErrorPosition()
+    {
+        return inErrorPosition;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.name == "PointsTrigger")
