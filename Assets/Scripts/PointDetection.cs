@@ -11,6 +11,7 @@ public class PointDetection : MonoBehaviour
 
     private float deltaSum;
     private int points = 0;
+    private int currentPoints = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -48,25 +49,41 @@ public class PointDetection : MonoBehaviour
             if (other.tag == "block" && !other.GetComponent<BlockPoints>().getIsInErrorPosition())
             {
                 points += other.GetComponent<BlockPoints>().Points;
-                GameObject pt = GameObject.Find("PointsText");
-                pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
+                GameManager.Instance.addPoints(other.GetComponent<BlockPoints>().Points);
+                //GameObject pt = GameObject.Find("PointsText");
+                //pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
             }
 
         }
 
+        if (other.tag == "block")
+        {
+            if (other.GetComponent<BlockPoints>().pointsCounted)
+            {
+                other.GetComponent<BlockPoints>().setPointsCounted(false);
+
+            }
+        }
+
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (startPointDetection)
-    //    {
-    //        if(other.tag == "block")
-    //        {
-    //            points += other.GetComponent<BlockPoints>().Points;
-    //            Debug.Log("Points: " + points);
-    //        }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "block" && !other.GetComponent<BlockPoints>().getIsInErrorPosition())
+        {
+            if(!other.GetComponent<BlockPoints>().pointsCounted)
+            {
+                other.GetComponent<BlockPoints>().setPointsCounted(true);
+            }
+        }
+        if (other.tag == "block" && other.GetComponent<BlockPoints>().getIsInErrorPosition())
+        {
+            if (other.GetComponent<BlockPoints>().pointsCounted)
+            {
+                other.GetComponent<BlockPoints>().setPointsCounted(false);
+            }
+        }
 
 
-    //    }
-    //}
+    }
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BlockPoints : MonoBehaviour
 {
-    public int Points = 0;
+    public int Points = 5;
     public Material errorMaterial;
     public Material standartMaterial;
+
+    public bool pointsCounted { get; private set; } = false;
     private bool isInPointsArea = false;
     private bool inErrorPosition = false;
 
@@ -29,6 +31,19 @@ public class BlockPoints : MonoBehaviour
     public bool getIsInErrorPosition()
     {
         return inErrorPosition;
+    }
+
+    public void setPointsCounted(bool b)
+    {
+        if (!pointsCounted && b)
+        {
+            GameManager.Instance.addCurrrentPoints(Points);
+        }
+        if (pointsCounted && !b)
+        {
+            GameManager.Instance.addCurrrentPoints(-Points);
+        }
+        pointsCounted = b;
     }
 
     private void OnTriggerStay(Collider other)
