@@ -28,6 +28,7 @@ public class PointDetection : MonoBehaviour
 
         if( wallHasPassed && deltaSum >= standTime)
         {
+            points = 0;
             startPointDetection = true;
             transform.position -= new Vector3(0.1f, 0, 0) ;
         }
@@ -49,7 +50,7 @@ public class PointDetection : MonoBehaviour
             if (other.tag == "block" && !other.GetComponent<BlockPoints>().getIsInErrorPosition())
             {
                 points += other.GetComponent<BlockPoints>().Points;
-                GameManager.Instance.addPoints(other.GetComponent<BlockPoints>().Points);
+                GameManager.Instance.setPoints(points);
                 //GameObject pt = GameObject.Find("PointsText");
                 //pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
             }

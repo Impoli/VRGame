@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int points { get; private set; } = 0;
     public int currentPoints { get; private set; } = 0;
+    public bool wallIsAlive { get; private set; } = false;
+    public int wallPoints { get; private set; } = 0;
 
     private void Awake()
     {
@@ -27,16 +29,27 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameObject pt = GameObject.Find("PointsText");
-        pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + currentPoints;
+        pt.GetComponent<UnityEngine.UI.Text>().text = string.Format("Wall Points: {0} \nCurrent Points: {1} ",wallPoints, currentPoints );
     }
 
-    public void addPoints(int p)
+    public void setPoints(int p)
     {
-        points += p;
+        points = p;
+        Debug.Log(points);
     }
 
     public void addCurrrentPoints(int p)
     {
         currentPoints += p;
+    }
+
+    public void setWallIsAlive(bool isAlive)
+    {
+        wallIsAlive = isAlive;
+    }
+
+    public void setWallPoints(int points)
+    {
+        wallPoints = points;
     }
 }

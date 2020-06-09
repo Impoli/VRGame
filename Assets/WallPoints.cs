@@ -9,12 +9,17 @@ public class WallPoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.Instance.setWallPoints(wallPoints);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameManager.Instance.points >= wallPoints)
+        {
+            Destroy(gameObject);
+            GameManager.Instance.setWallIsAlive(false);
+            GameManager.Instance.setPoints(0);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class WallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0, -0.2f * Time.deltaTime);
+        transform.position += new Vector3(0, 0, -1.2f * Time.deltaTime);
       
     }
 }
