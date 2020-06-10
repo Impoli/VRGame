@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int currentPoints { get; private set; } = 0;
     public bool wallIsAlive { get; private set; } = false;
     public int wallPoints { get; private set; } = 0;
+    public float currentWallGapX { get; private set; } = 0;
 
     private void Awake()
     {
@@ -51,5 +52,10 @@ public class GameManager : MonoBehaviour
     public void setWallPoints(int points)
     {
         wallPoints = points;
+    }
+
+    public void setCurrentWallGapX( float gap)
+    {
+        currentWallGapX = gap;
     }
 }

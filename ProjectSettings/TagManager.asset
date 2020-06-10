@@ -6,6 +6,7 @@ TagManager:
   tags:
   - block
   - WallPlane
+  - wallRefCube
   layers:
   - Default
   - TransparentFX
