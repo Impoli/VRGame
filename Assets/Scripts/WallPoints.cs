@@ -15,7 +15,8 @@ public class WallPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.points >= wallPoints)
+       
+        if (GameManager.Instance.points >= wallPoints)
         {
             Destroy(gameObject);
             GameManager.Instance.setWallIsAlive(false);
