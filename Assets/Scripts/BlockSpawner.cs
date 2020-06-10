@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     public GameObject allBlocks;
+    public float spawnTime = 0.5f;
 
     private GameObject spawnTrigger1;
     private GameObject spawnTrigger2;
@@ -35,20 +36,20 @@ public class BlockSpawner : MonoBehaviour
     {
         deltaSum += Time.deltaTime;
 
-        if (spawnTrigger1.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= 0.5f)
+        if (spawnTrigger1.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
         {
             deltaSum = 0;
             SpawnBlock(spawnTrigger1);
         }
 
 
-        if (spawnTrigger2.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= 0.5f)
+        if (spawnTrigger2.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
         {
             deltaSum = 0;
             SpawnBlock(spawnTrigger2);
         }
 
-            if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= 0.5f)
+            if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
         {
             deltaSum = 0;
             SpawnBlock(spawnTrigger3);

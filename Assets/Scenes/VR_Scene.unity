@@ -11861,6 +11861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allBlocks: {fileID: 4135393299879191531, guid: fdf8bfe1f471af841b1ada7d0d9d4bd2,
     type: 3}
+  spawnTime: 0.5
 --- !u!1 &1849532168
 GameObject:
   m_ObjectHideFlags: 0
@@ -11886,7 +11887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849532168}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.215, y: -5.3549304, z: 22.67}
+  m_LocalPosition: {x: -0.21, y: -5.3549304, z: 22.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 276412833}
