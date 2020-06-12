@@ -30,13 +30,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameObject pt = GameObject.Find("PointsText");
-        pt.GetComponent<UnityEngine.UI.Text>().text = string.Format("Wall Points: {0} \nCurrent Points: {1} ",wallPoints, currentPoints );
+        pt.GetComponent<UnityEngine.UI.Text>().text = string.Format("Wall Points: {0} \nCurrent Points: {1} \n {2} ",wallPoints, currentPoints, points );
     }
 
     public void setPoints(int p)
     {
         points = p;
-        Debug.Log(points);
     }
 
     public void addCurrrentPoints(int p)
@@ -58,4 +57,5 @@ public class GameManager : MonoBehaviour
     {
         currentWallGapX = gap;
     }
+
 }

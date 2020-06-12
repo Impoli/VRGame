@@ -26,17 +26,9 @@ public class SizeCustomizer : MonoBehaviour
 
     public void newScale(GameObject theGameObject, float newSize)
     {
-       
-
         float size = theGameObject.GetComponent<Renderer>().bounds.size.x;
-
         Vector3 rescale = theGameObject.transform.localScale;
-
         rescale.x = newSize * rescale.x / size;
-        Debug.Log("current x: " + size);
-        Debug.Log("new size x: " + newSize);
-        Debug.Log("new scalx: " + rescale.x);
-
         theGameObject.transform.localScale = rescale;
 
     }

@@ -14,7 +14,7 @@ public class BlockPoints : MonoBehaviour
 
     private bool rPT_1IsTriggerd = false;
     private bool rPT_2IsTriggerd = false;
-    
+
 
     private void Update()
     {
@@ -25,6 +25,16 @@ public class BlockPoints : MonoBehaviour
         else
         {
             GetComponent<MeshRenderer>().material = standartMaterial;
+        }
+
+        if (!GameManager.Instance.wallIsAlive)
+        {
+           
+            if (!inErrorPosition)
+            {
+                GameManager.Instance.addCurrrentPoints(-Points);
+            }
+            Destroy(gameObject);
         }
     }
 

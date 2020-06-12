@@ -13,11 +13,14 @@ public class PointDetection : MonoBehaviour
     private int points = 0;
     private int currentPoints = 0;
 
+    Vector3 stdPosition;
+
     // Start is called before the first frame update
     void Start()
     {
         //GameObject podestPlate = GameObject.Find("PodestPlate");
         //transform.localScale.Set(podestPlate.transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        stdPosition = transform.localPosition;
 
     }
 
@@ -27,12 +30,19 @@ public class PointDetection : MonoBehaviour
         deltaSum += Time.deltaTime;
 
         if( wallHasPassed && deltaSum >= standTime)
-        {
+        {  
             points = 0;
             startPointDetection = true;
             transform.position -= new Vector3(0.1f, 0, 0) ;
         }
 
+        if (startPointDetection && (transform.localPosition.x >= (stdPosition + new Vector3(2f, 0, 0)).x))
+        {
+            startPointDetection = false;
+            transform.localPosition = stdPosition;
+            wallHasPassed = false;
+        }
+ 
     }
 
     private void OnTriggerExit(Collider other)
@@ -56,8 +66,7 @@ public class PointDetection : MonoBehaviour
             }
 
         }
-
-        if (other.tag == "block")
+        else if (other.tag == "block")
         {
             if (other.GetComponent<BlockPoints>().pointsCounted)
             {

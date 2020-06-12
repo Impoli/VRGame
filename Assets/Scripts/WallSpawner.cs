@@ -7,6 +7,8 @@ public class WallSpawner : MonoBehaviour
     public GameObject allWalls;
 
     private GameObject[] usedwalls;
+    private float timeSume = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +25,19 @@ public class WallSpawner : MonoBehaviour
         
         if (!GameManager.Instance.wallIsAlive)
         {
-            GameManager.Instance.setWallIsAlive(true);
+            timeSume += Time.deltaTime;
+            if (timeSume >= 0.5)
+            {
+                timeSume = 0;
+                GameManager.Instance.setWallIsAlive(true);
 
-            int wallNum = Random.Range(0, usedwalls.Length);
+                int wallNum = Random.Range(0, usedwalls.Length);
 
-            GameObject newBlock = Instantiate(usedwalls[wallNum], transform);
-            Vector3 pos = transform.position;
-            newBlock.transform.position = new Vector3(pos.x, pos.y, pos.z);
+                GameObject newBlock = Instantiate(usedwalls[wallNum], transform);
+                Vector3 pos = transform.position;
+                newBlock.transform.position = new Vector3(pos.x, pos.y, pos.z);
+            }
+            
         }
     }
 }

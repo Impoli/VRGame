@@ -49,7 +49,7 @@ public class BlockSpawner : MonoBehaviour
             SpawnBlock(spawnTrigger2);
         }
 
-            if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
+        if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
         {
             deltaSum = 0;
             SpawnBlock(spawnTrigger3);
