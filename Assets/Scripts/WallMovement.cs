@@ -30,7 +30,7 @@ public class WallMovement : MonoBehaviour
             wallPassedPodestRef = false;
         }
 
-        if((OVRInput.Get(OVRInput.Button.One)) && !wallPassedPodestRef)
+        if((OVRInput.Get(OVRInput.Button.One)) && !wallPassedPodestRef )
         {
             transform.position += new Vector3(0, 0, -2f * Time.deltaTime);
         }

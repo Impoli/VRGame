@@ -29,8 +29,7 @@ public class BlockPoints : MonoBehaviour
 
         if (!GameManager.Instance.wallIsAlive)
         {
-           
-            if (!inErrorPosition)
+            if (!inErrorPosition && isInPointsArea)
             {
                 GameManager.Instance.addCurrrentPoints(-Points);
             }

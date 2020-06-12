@@ -33,13 +33,22 @@ public class GameManager : MonoBehaviour
         pt.GetComponent<UnityEngine.UI.Text>().text = string.Format("Wall Points: {0} \nCurrent Points: {1} \n {2} ",wallPoints, currentPoints, points );
     }
 
-    public void setPoints(int p)
+    public void setPoints(bool reset)
     {
-        points = p;
+        
+        if (reset)
+        {
+            points = 0;
+        } else
+        {
+            points = currentPoints;
+        }
+        
     }
 
     public void addCurrrentPoints(int p)
     {
+
         currentPoints += p;
     }
 

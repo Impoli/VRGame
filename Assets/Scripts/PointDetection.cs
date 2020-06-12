@@ -5,13 +5,13 @@ using UnityEngine;
 public class PointDetection : MonoBehaviour
 {
 
-    public float standTime = 1;
+    public float standTime = 0.5f;
     private bool wallHasPassed = false;
     private bool startPointDetection = false;
 
     private float deltaSum;
     private int points = 0;
-    private int currentPoints = 0;
+    //private int currentPoints = 0;
 
     Vector3 stdPosition;
 
@@ -32,16 +32,19 @@ public class PointDetection : MonoBehaviour
         if( wallHasPassed && deltaSum >= standTime)
         {  
             points = 0;
+            wallHasPassed = false;
             startPointDetection = true;
-            transform.position -= new Vector3(0.1f, 0, 0) ;
+
+            GameManager.Instance.setPoints(false);
+            //transform.position -= new Vector3(0.1f, 0, 0) ;
         }
 
-        if (startPointDetection && (transform.localPosition.x >= (stdPosition + new Vector3(2f, 0, 0)).x))
-        {
-            startPointDetection = false;
-            transform.localPosition = stdPosition;
-            wallHasPassed = false;
-        }
+        //if (startPointDetection && (transform.localPosition.x >= (stdPosition + new Vector3(2f, 0, 0)).x))
+        //{
+        //    startPointDetection = false;
+        //    transform.localPosition = stdPosition;
+        //    wallHasPassed = false;
+        //}
  
     }
 
@@ -55,18 +58,20 @@ public class PointDetection : MonoBehaviour
             deltaSum = 0;
         }
 
-        if (startPointDetection)
-        {
-            if (other.tag == "block" && !other.GetComponent<BlockPoints>().getIsInErrorPosition())
-            {
-                points += other.GetComponent<BlockPoints>().Points;
-                GameManager.Instance.setPoints(points);
-                //GameObject pt = GameObject.Find("PointsText");
-                //pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
-            }
+        //if (startPointDetection)
+        //{
+        //    //if (other.tag == "block" && !other.GetComponent<BlockPoints>().getIsInErrorPosition())
+        //    //{
+        //    //    points += other.GetComponent<BlockPoints>().Points;
+        //    //    GameManager.Instance.setPoints(points);
+        //    //    Debug.Log("count: " + other.name);
+        //    //    //GameObject pt = GameObject.Find("PointsText");
+        //    //    //pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
+        //    //}
 
-        }
-        else if (other.tag == "block")
+        //}
+        //else 
+        if (other.tag == "block")
         {
             if (other.GetComponent<BlockPoints>().pointsCounted)
             {

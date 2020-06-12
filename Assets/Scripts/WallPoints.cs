@@ -24,7 +24,7 @@ public class WallPoints : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.Instance.setWallIsAlive(false);
-            GameManager.Instance.setPoints(0);
+            GameManager.Instance.setPoints(true);
         }
     }
 }
