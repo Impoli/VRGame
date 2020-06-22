@@ -21,7 +21,7 @@ public class TorchLight : MonoBehaviour
 
         if (timeSum >= duration)
         {
-            torch.intensity = Random.Range(0.3f, 0.9f);
+            torch.intensity = Random.Range(0.1f, 0.5f);
             duration = Random.Range(0.01f, 0.3f);
             timeSum = 0;
         }
