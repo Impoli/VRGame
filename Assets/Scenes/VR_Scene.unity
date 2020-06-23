@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: c7bd3dbd2595b0b4fb3eca5af9683d96,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9877,7 +9877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.782707, y: -2.4264946}
+  m_AnchoredPosition: {x: -4.62, y: -2.4264946}
   m_SizeDelta: {x: 565, y: 604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1009606372
@@ -11984,7 +11984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1375597181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14648,7 +14648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1700134357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15611,7 +15611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1849532169
 Transform:
   m_ObjectHideFlags: 0
