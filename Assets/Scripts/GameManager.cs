@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance = null;
 
+    public float tutorialTime = 3;
+    public bool tutorialEnded { get; private set; } = false;
+    private float timeSum = 0;
+
     public int points { get; private set; } = 0;
     public int currentPoints { get; private set; } = 0;
     public bool wallIsAlive { get; private set; } = false;
@@ -31,6 +35,13 @@ public class GameManager : MonoBehaviour
     {
         GameObject pt = GameObject.Find("PointsText");
         pt.GetComponent<UnityEngine.UI.Text>().text = string.Format("Wall Points: {0} \nCurrent Points: {1} \n {2} ",wallPoints, currentPoints, points );
+
+        timeSum += Time.deltaTime;
+        if(timeSum >= tutorialTime)
+        {
+            tutorialEnded = true;
+        }
+
     }
 
     public void setPoints(bool reset)
