@@ -67,25 +67,45 @@ public class BlockSpawner : MonoBehaviour
 
     GameObject GetRandomBlock()
     {
-        GameObject block = null;
-        while (block == null)
+        List<GameObject> currentBlocks = new List<GameObject>();
+
+        foreach (var bl in usedBlocks)
         {
-            int blockNum = Random.Range(0, usedBlocks.Length);
-            int prob = (int)usedBlocks[blockNum].GetComponent<BlockPoints>().probability;
-            Debug.Log("Prob: " + prob);
-            
-            if ( prob != 0)
+            int prob = (int)bl.GetComponent<BlockPoints>().probability;
+            if (prob != 0)
             {
-                int balancing = 2; // the higher the value the less difference between probabilities
-                int ranProb = Random.Range(1, prob + balancing);
-                Debug.Log(ranProb);
+                int ranProb = Random.Range(1, prob + 1);
                 if (ranProb == 1)
                 {
-                    block = usedBlocks[blockNum];
+                    currentBlocks.Add(bl);
                 }
-
             }
         }
-        return block;
+
+        int blockNum = Random.Range(1,currentBlocks.Count);
+        return currentBlocks[blockNum];
+
+
+        //GameObject block = null;
+        //while (block == null)
+        //{
+
+        //    int blockNum = Random.Range(0, usedBlocks.Length);
+        //    int prob = (int)usedBlocks[blockNum].GetComponent<BlockPoints>().probability;
+        //    Debug.Log("Prob: " + prob);
+
+        //    if ( prob != 0)
+        //    {
+        //        int balancing = 2; // the higher the value the less difference between probabilities
+        //        int ranProb = Random.Range(1, prob + balancing);
+        //        Debug.Log(ranProb);
+        //        if (ranProb == 1)
+        //        {
+        //            block = usedBlocks[blockNum];
+        //        }
+
+        //    }
+        //}
+
     }
 }
