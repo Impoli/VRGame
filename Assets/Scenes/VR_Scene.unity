@@ -1688,7 +1688,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567245460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5016,7 +5016,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963764766}
-  - component: {fileID: 1963764769}
   - component: {fileID: 1963764768}
   - component: {fileID: 1963764767}
   m_Layer: 0
@@ -5092,12 +5091,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963764765}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1977593169
 GameObject:
   m_ObjectHideFlags: 0
