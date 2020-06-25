@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockPoints : MonoBehaviour
 {
     public int Points = 5;
+    public SpawnProbability probability = SpawnProbability.High;
     public Material errorMaterial;
     public Material standartMaterial;
 
@@ -107,6 +108,14 @@ public class BlockPoints : MonoBehaviour
 
     }
 
+}
+
+public enum SpawnProbability : int
+{
+    None = 0,
+    Low = 3,
+    Middle = 2,
+    High = 1
 }
 
 
