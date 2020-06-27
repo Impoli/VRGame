@@ -30,7 +30,7 @@ public class WallSpawner : MonoBehaviour
             {
                 timeSume = 0;
                 GameManager.Instance.setWallIsAlive(true);
-
+                
                 int wallNum = Random.Range(0, usedwalls.Length);
 
                 GameObject newBlock = Instantiate(usedwalls[wallNum], transform);
