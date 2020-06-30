@@ -22,9 +22,10 @@ public class WallPoints : MonoBehaviour
 
         if (GameManager.Instance.points >= wallPoints)
         {
-            Destroy(gameObject);
+            
             GameManager.Instance.setWallIsAlive(false);
             GameManager.Instance.setPoints(true);
+            Destroy(gameObject);
         }
     }
 }

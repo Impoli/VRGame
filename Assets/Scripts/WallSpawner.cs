@@ -29,13 +29,13 @@ public class WallSpawner : MonoBehaviour
             if (timeSume >= 0.5)
             {
                 timeSume = 0;
-                GameManager.Instance.setWallIsAlive(true);
-                
+      
                 int wallNum = Random.Range(0, usedwalls.Length);
 
                 GameObject newBlock = Instantiate(usedwalls[wallNum], transform);
                 Vector3 pos = transform.position;
                 newBlock.transform.position = new Vector3(pos.x, pos.y, pos.z);
+                GameManager.Instance.setWallIsAlive(true);
             }
             
         }

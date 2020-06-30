@@ -36,25 +36,30 @@ public class BlockSpawner : MonoBehaviour
     {
         deltaSum += Time.deltaTime;
 
-        if (spawnTrigger1.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
+        if (GameManager.Instance.wallIsAlive)
         {
-            deltaSum = 0;
-            SpawnBlock(spawnTrigger1);
+            if (spawnTrigger1.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
+            {
+                deltaSum = 0;
+                SpawnBlock(spawnTrigger1);
+            }
+
+
+            if (spawnTrigger2.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
+            {
+                deltaSum = 0;
+                SpawnBlock(spawnTrigger2);
+            }
+
+            if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
+            {
+                deltaSum = 0;
+                SpawnBlock(spawnTrigger3);
+            }
         }
+        
 
-
-        if (spawnTrigger2.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
-        {
-            deltaSum = 0;
-            SpawnBlock(spawnTrigger2);
-        }
-
-        if (spawnTrigger3.GetComponent<SpawnTrigger>().isEmpty && deltaSum >= spawnTime)
-        {
-            deltaSum = 0;
-            SpawnBlock(spawnTrigger3);
-        }
-
+   
     }
 
     void SpawnBlock(GameObject trigger)

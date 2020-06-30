@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12d8208f69f3a04f977e00171402281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPoints: 50
+  wallPoints: 10
   refCube: {fileID: 0}
 --- !u!54 &1145851061111780086
 Rigidbody:
