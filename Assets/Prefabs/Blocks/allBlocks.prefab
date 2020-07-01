@@ -277,6 +277,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 67
       objectReference: {fileID: 0}
+    - target: {fileID: 2047740250243749471, guid: 4c7d66c4b7ad49c4b89efd95e94ec6b3,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047740250243749471, guid: 4c7d66c4b7ad49c4b89efd95e94ec6b3,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7241281490212852751, guid: 4c7d66c4b7ad49c4b89efd95e94ec6b3,
         type: 3}
       propertyPath: m_Name
@@ -363,6 +373,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9170382843571339849, guid: d6ab4a9951ca91e4eb8156fdaa91b560,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170382843571339849, guid: d6ab4a9951ca91e4eb8156fdaa91b560,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ab4a9951ca91e4eb8156fdaa91b560, type: 3}
 --- !u!4 &8481673603917677073 stripped
@@ -432,6 +452,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393150394976635285, guid: d46d1f0c87ca93041be8a371f8f31df3,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393150394976635285, guid: d46d1f0c87ca93041be8a371f8f31df3,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8830206328723661628, guid: d46d1f0c87ca93041be8a371f8f31df3,
         type: 3}
@@ -512,6 +542,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "kl\xF6tze_7"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737858600534182906, guid: 73be9b559dffc804e969bcd94109a974,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737858600534182906, guid: 73be9b559dffc804e969bcd94109a974,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73be9b559dffc804e969bcd94109a974, type: 3}
@@ -594,6 +634,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: "kl\xF6tze_10"
       objectReference: {fileID: 0}
+    - target: {fileID: 5874282134553102453, guid: e01aca8fc02bca642a5cd3b5f3f732f4,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874282134553102453, guid: e01aca8fc02bca642a5cd3b5f3f732f4,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01aca8fc02bca642a5cd3b5f3f732f4, type: 3}
 --- !u!4 &607934771197808753 stripped
@@ -615,6 +665,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 3305421957575974649, guid: 3d6467ab9e95a1b419bec8756fe4a2ca,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305421957575974649, guid: 3d6467ab9e95a1b419bec8756fe4a2ca,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6845149102751664117, guid: 3d6467ab9e95a1b419bec8756fe4a2ca,
         type: 3}
       propertyPath: m_Name
@@ -696,6 +756,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 100647676899461244, guid: 760927400ea477e41b1278abe2c24890,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100647676899461244, guid: 760927400ea477e41b1278abe2c24890,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6305062567277986497, guid: 760927400ea477e41b1278abe2c24890,
         type: 3}
       propertyPath: m_Name
@@ -771,6 +841,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 394401316414925736, guid: 2890a38185f60c947b6041498176179c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 394401316414925736, guid: 2890a38185f60c947b6041498176179c,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4612676845274529983, guid: 2890a38185f60c947b6041498176179c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -852,6 +932,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 491906065666759088, guid: 44634952a40992f48a177d859ecfcd7c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 491906065666759088, guid: 44634952a40992f48a177d859ecfcd7c,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 557703102418648348, guid: 44634952a40992f48a177d859ecfcd7c,
         type: 3}
       propertyPath: m_Name
@@ -927,6 +1017,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 3162113919396656818, guid: faa30440a2aa0004aa4a4cb295f04fd4,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162113919396656818, guid: faa30440a2aa0004aa4a4cb295f04fd4,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6396229456339136422, guid: faa30440a2aa0004aa4a4cb295f04fd4,
         type: 3}
       propertyPath: m_Name
@@ -1008,6 +1108,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 1077141599781744878, guid: 6326354bcacacf44b8c6b6aadcd4f997,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077141599781744878, guid: 6326354bcacacf44b8c6b6aadcd4f997,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5442725895486888943, guid: 6326354bcacacf44b8c6b6aadcd4f997,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,6 +1259,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 7019555397436835693, guid: e9210e040e58fac4dbc43e2127c8ef51,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019555397436835693, guid: e9210e040e58fac4dbc43e2127c8ef51,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9210e040e58fac4dbc43e2127c8ef51, type: 3}
 --- !u!4 &6657824448764281824 stripped
@@ -1164,6 +1284,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 4405047340668941934, guid: 55899f57e4d6f074eab3e2384ae19925,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405047340668941934, guid: 55899f57e4d6f074eab3e2384ae19925,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5620547455651589986, guid: 55899f57e4d6f074eab3e2384ae19925,
         type: 3}
       propertyPath: m_Name
@@ -1245,6 +1375,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4937081581127915666}
     m_Modifications:
+    - target: {fileID: 2369064230017731346, guid: 92e40ffbf9a9d6244b97b0228ab73f1e,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2369064230017731346, guid: 92e40ffbf9a9d6244b97b0228ab73f1e,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6035235044011135518, guid: 92e40ffbf9a9d6244b97b0228ab73f1e,
         type: 3}
       propertyPath: m_Name
@@ -1385,6 +1525,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "kl\xF6tze_1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408713583028572738, guid: 84189518356988342adf82263214afbd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408713583028572738, guid: 84189518356988342adf82263214afbd,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84189518356988342adf82263214afbd, type: 3}
