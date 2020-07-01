@@ -21,8 +21,7 @@ public class WallPoints : MonoBehaviour
         GameManager.Instance.setCurrentWallGapX(refCube.GetComponent<Renderer>().bounds.size.x);
 
         if (GameManager.Instance.points >= wallPoints)
-        {
-            
+        {      
             GameManager.Instance.setWallIsAlive(false);
             GameManager.Instance.setPoints(true);
             Destroy(gameObject);
