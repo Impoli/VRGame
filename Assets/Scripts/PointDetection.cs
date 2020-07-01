@@ -7,7 +7,7 @@ public class PointDetection : MonoBehaviour
 
     public float standTime = 0.5f;
     private bool wallHasPassed = false;
-    private bool startPointDetection = false;
+    //private bool startPointDetection = false;
 
     private float deltaSum;
     private int points = 0;
@@ -33,7 +33,7 @@ public class PointDetection : MonoBehaviour
         {  
             points = 0;
             wallHasPassed = false;
-            startPointDetection = true;
+            //startPointDetection = true;
 
             GameManager.Instance.setPoints(false);
             //transform.position -= new Vector3(0.1f, 0, 0) ;
