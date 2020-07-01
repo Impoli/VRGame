@@ -5,7 +5,7 @@ using UnityEngine;
 public class PointDetection : MonoBehaviour
 {
 
-    public float standTime = 0.5f;
+    public float standTime = 0.0f;
     private bool wallHasPassed = false;
     //private bool startPointDetection = false;
 

@@ -34,7 +34,7 @@ public class BlockPoints : MonoBehaviour
             {
                 GameManager.Instance.addCurrrentPoints(-Points);
             }
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
