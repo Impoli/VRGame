@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5945266560512690187}
   - component: {fileID: 3939916335270308450}
   - component: {fileID: -2768295006873661994}
+  - component: {fileID: 8509129288382004700}
   m_Layer: 0
   m_Name: "kl\xF6tze_11"
   m_TagString: Untagged
@@ -220,3 +221,16 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &8509129288382004700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830206328723661628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f85b994a99c1a4ab0e07588c14f3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Block: {fileID: 8830206328723661628}

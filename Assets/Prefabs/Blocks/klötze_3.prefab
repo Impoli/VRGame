@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4405047340668941932}
   - component: {fileID: -1351736029337761571}
   - component: {fileID: -1545636179895461624}
+  - component: {fileID: 3850684617091588557}
   m_Layer: 0
   m_Name: "kl\xF6tze_3"
   m_TagString: block
@@ -202,3 +203,16 @@ MonoBehaviour:
   probability: 1
   errorMaterial: {fileID: 2100000, guid: b841cf2e7d234fe4ab664ebc7e4c1684, type: 2}
   standartMaterial: {fileID: 2100000, guid: 7e0cb44aad36bfc44b64a48f8d50c843, type: 2}
+--- !u!114 &3850684617091588557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5620547455651589986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f85b994a99c1a4ab0e07588c14f3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Block: {fileID: 5620547455651589986}
