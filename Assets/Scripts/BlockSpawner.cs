@@ -87,7 +87,7 @@ public class BlockSpawner : MonoBehaviour
             }
         }
 
-        int blockNum = Random.Range(1,currentBlocks.Count);
+        int blockNum = Random.Range(0,currentBlocks.Count);
         return currentBlocks[blockNum];
 
 
