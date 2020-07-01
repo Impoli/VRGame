@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int wallPoints { get; private set; } = 0;
     public float currentWallGapX { get; private set; } = 0;
 
+
     private void Awake()
     {
         if (Instance == null)

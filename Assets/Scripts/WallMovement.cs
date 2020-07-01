@@ -36,7 +36,7 @@ public class WallMovement : MonoBehaviour
         }
         else
         {
-            transform.position += new Vector3(0, 0, -0.0f * Time.deltaTime);
+            transform.position += new Vector3(0, 0, -0.25f * Time.deltaTime);
         }
       
     }
