@@ -6,12 +6,19 @@ public class WallPoints : MonoBehaviour
 {
 
     public int wallPoints = 0;
-    public GameObject refCube;
+    private GameObject refCube;
     // Start is called before the first frame update
     void Start()
     {
         GameManager.Instance.setWallPoints(wallPoints);
-        refCube = gameObject.transform.GetChild(1).gameObject;
+       
+        for (int i = 0; i < gameObject.transform.childCount ; i++)
+        {
+            if (gameObject.transform.GetChild(i).gameObject.tag == "wallRefCube")
+            {
+                refCube = gameObject.transform.GetChild(i).gameObject;
+            }
+        }
     }
 
     // Update is called once per frame
