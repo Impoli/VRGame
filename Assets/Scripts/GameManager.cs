@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject RightHand;
     public GameObject LeftHand;
     public GameObject Player;
+    public bool templateIsEnabled { get; private set; } = false;
 
     private void Awake()
     {
@@ -97,4 +98,8 @@ public class GameManager : MonoBehaviour
         currentWallGapX = gap;
     }
 
+    public void setTemplateIsEnabled(bool enabled)
+    {
+        templateIsEnabled = enabled;
+    }
 }
