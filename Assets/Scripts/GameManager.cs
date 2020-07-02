@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public float currentWallGapX { get; private set; } = 0;
     public GameObject RightHand;
     public GameObject LeftHand;
+    public GameObject Player;
 
     private void Awake()
     {
@@ -52,6 +53,13 @@ public class GameManager : MonoBehaviour
         {
             OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
         }
+        if(Player.transform.position.z < -0.1 || Player.transform.position.z > 0.1)
+        {
+            Player.SetActive(false);
+            Player.transform.position = new Vector3(0f, Player.transform.position.y, 0f);
+            Player.SetActive(true);
+        }
+
 
     }
 

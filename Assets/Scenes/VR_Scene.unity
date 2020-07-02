@@ -1309,6 +1309,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1600521605364715809, guid: 52687e9d37ad3584086a7ca5d5b6b048,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7060d466a9edbc244a2b83c3494b0e12, type: 2}
     - target: {fileID: -927199367670048503, guid: 52687e9d37ad3584086a7ca5d5b6b048,
         type: 3}
       propertyPath: m_Name
@@ -3957,6 +3962,7 @@ MonoBehaviour:
   tutorialTime: 5
   RightHand: {fileID: 1135710901}
   LeftHand: {fileID: 974336994}
+  Player: {fileID: 585438196}
 --- !u!4 &1452428890
 Transform:
   m_ObjectHideFlags: 0
@@ -5957,7 +5963,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96ab6d725ec5a274eb2af6e793a0fc7a, type: 2}
+  - {fileID: 2100000, guid: 7060d466a9edbc244a2b83c3494b0e12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

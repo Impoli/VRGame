@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12d8208f69f3a04f977e00171402281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPoints: 10
+  wallPoints: 150
   refCube: {fileID: 0}
 --- !u!54 &-6933855707531941823
 Rigidbody:

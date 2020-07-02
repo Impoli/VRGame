@@ -31,7 +31,7 @@ public class WallSpawner : MonoBehaviour
                 timeSume = 0;
       
                 int wallNum = Random.Range(0, usedwalls.Length);
-
+                //wallNum = 1;
                 GameObject newBlock = Instantiate(usedwalls[wallNum], transform);
                 Vector3 pos = transform.position;
                 newBlock.transform.position = new Vector3(pos.x, pos.y, pos.z);
