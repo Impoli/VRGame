@@ -9,6 +9,7 @@ TagManager:
   - wallRefCube
   - LeftHand
   - RightHand
+  - wallTemplate
   layers:
   - Default
   - TransparentFX
