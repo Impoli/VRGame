@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public bool wallIsAlive { get; private set; } = false;
     public int wallPoints { get; private set; } = 0;
     public float currentWallGapX { get; private set; } = 0;
-
+    public GameObject RightHand;
+    public GameObject LeftHand;
 
     private void Awake()
     {
@@ -41,6 +42,15 @@ public class GameManager : MonoBehaviour
         if(timeSum >= tutorialTime)
         {
             tutorialEnded = true;
+        }
+
+        if(RightHand.transform.childCount <= 3)
+        {
+            OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
+        }
+        if (LeftHand.transform.childCount <= 3)
+        {
+            OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
         }
 
     }

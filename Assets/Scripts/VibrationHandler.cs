@@ -36,24 +36,40 @@ public class VibrationHandler : MonoBehaviour
                 Debug.Log("Block Held in Right Hand");
             }
         }
-        Parent = null;
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag != "LeftHand" && collision.gameObject.tag != "RightHand" && Parent != null)
         {
             if (Parent.tag == "LeftHand")
             {
                 Debug.Log("Block in Left Hand Collided");
-                OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.LTouch);
+                OVRInput.SetControllerVibration(0.1f, 0.1f, OVRInput.Controller.LTouch);
             }
             if (Parent.tag == "RightHand")
             {
                 Debug.Log("Block in Right Hand Collided");
-                OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
+                OVRInput.SetControllerVibration(0.1f, 0.1f, OVRInput.Controller.RTouch);
             }
             
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag != "LeftHand" && collision.gameObject.tag != "RightHand" && Parent != null)
+        {
+            if (Parent.tag == "LeftHand")
+            {
+                Debug.Log("Block in Left Hand Collided");
+                OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
+            }
+            if (Parent.tag == "RightHand")
+            {
+                Debug.Log("Block in Right Hand Collided");
+                OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
+            }
+
         }
     }
 }

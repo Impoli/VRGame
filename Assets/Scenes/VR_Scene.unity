@@ -3955,6 +3955,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialTime: 5
+  RightHand: {fileID: 1135710901}
+  LeftHand: {fileID: 974336994}
 --- !u!4 &1452428890
 Transform:
   m_ObjectHideFlags: 0
