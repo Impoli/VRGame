@@ -19,12 +19,16 @@ public class WallPoints : MonoBehaviour
                 refCube = gameObject.transform.GetChild(i).gameObject;
             }
         }
+
+        transform.position += new Vector3(0, -2.5f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Ref Cube: " + refCube.GetComponent<Renderer>().bounds.size.x);
+
+
+
         GameManager.Instance.setCurrentWallGapX(refCube.GetComponent<Renderer>().bounds.size.x);
 
         if (GameManager.Instance.points >= wallPoints)
@@ -34,11 +38,26 @@ public class WallPoints : MonoBehaviour
             // Destroy(gameObject);
         }
 
-        if (GameObject.Find("Podest_schiene").transform.position.z - transform.position.z > 0.35)
+        if (GameObject.Find("Podest_schiene").transform.position.z - transform.position.z > 0.15)
         {
-            GameManager.Instance.setWallIsAlive(false);
-            GameManager.Instance.setPoints(true);
-            Destroy(gameObject);
+            gameObject.GetComponentInChildren<MeshCollider>().enabled = false;
+            gameObject.GetComponent<WallMovement>().enabled = false;
+            transform.position += new Vector3(0, -1f * Time.deltaTime, 0);
+
+            if (transform.position.y < -2.5)
+            {
+                GameManager.Instance.setWallIsAlive(false);
+                GameManager.Instance.setPoints(true);
+                Destroy(gameObject);
+            }
+            
+        }
+        else
+        {
+            if (transform.position.y < 0)
+            {
+                transform.position += new Vector3(0, 1f * Time.deltaTime, 0);
+            }
         }
 
     }
