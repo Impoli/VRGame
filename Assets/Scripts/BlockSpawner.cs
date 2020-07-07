@@ -9,7 +9,7 @@ public class BlockSpawner : MonoBehaviour
 
     private GameObject spawnTrigger1;
     private GameObject spawnTrigger2;
-    private GameObject spawnTrigger3;
+    //private GameObject spawnTrigger3;
     private Transform parent;
 
     private float deltaSum = 0;
@@ -20,7 +20,7 @@ public class BlockSpawner : MonoBehaviour
     {
         spawnTrigger1 = GameObject.Find("SpawnTrigger1");
         spawnTrigger2 = GameObject.Find("SpawnTrigger2");
-        spawnTrigger3 = GameObject.Find("SpawnTrigger3");
+        //spawnTrigger3 = GameObject.Find("SpawnTrigger3");
         parent = GameObject.Find("SpawnedBlocks").transform;
 
         usedBlocks = new GameObject[allBlocks.transform.childCount];

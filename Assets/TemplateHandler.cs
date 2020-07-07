@@ -11,11 +11,13 @@ public class TemplateHandler : MonoBehaviour
     private float activeTimeOnStart = 2;
     private float timeEnabledAfterClick = 1;
     private bool keyPressedFirstTime = false;
+    private TemplateStartHandler startTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
         podestRef = GameObject.Find("Podest_Temp_Ref").transform;
+        startTrigger = GameObject.Find("TempStartTrigger").GetComponentInChildren<TemplateStartHandler>();
         transform.position = podestRef.position;
         gameObject.GetComponent<MeshRenderer>().enabled = true;
         clickTimeSum = timeEnabledAfterClick;
@@ -25,10 +27,8 @@ public class TemplateHandler : MonoBehaviour
     void Update()
     {
         timeSum += Time.deltaTime;
-        
 
-
-        if ( timeSum <= activeTimeOnStart)
+        if (!startTrigger.isStarted)
         {
             gameObject.GetComponent<MeshRenderer>().enabled = true;
         }

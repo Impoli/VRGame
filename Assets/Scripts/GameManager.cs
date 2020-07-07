@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public bool templateIsEnabled { get; private set; } = false;
 
+
     private void Awake()
     {
         if (Instance == null)
