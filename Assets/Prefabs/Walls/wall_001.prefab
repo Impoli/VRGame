@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9178888568620042797}
   - component: {fileID: 7225390972428293862}
   - component: {fileID: 7289009052187875507}
+  - component: {fileID: 362148034982228330}
   m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &362148034982228330
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945953156775992764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: 3010a9dc165234146bc513d1b4630ce1, type: 3}
 --- !u!1 &1909143935551357865
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +184,7 @@ GameObject:
   - component: {fileID: 1619183404117268006}
   - component: {fileID: 6559112530793182084}
   - component: {fileID: 2584382797862013672}
+  - component: {fileID: 1580961112867337836}
   m_Layer: 0
   m_Name: wall_001
   m_TagString: Untagged
@@ -218,6 +234,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f32cd48df5e9f41bb378bc18c44088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1580961112867337836
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104216863481154716}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6042690153043534462
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +261,7 @@ GameObject:
   - component: {fileID: 4707510302910413918}
   - component: {fileID: 3028823203645376927}
   - component: {fileID: 1114380630484651053}
+  - component: {fileID: 3956867121986976633}
   m_Layer: 0
   m_Name: Plane.004
   m_TagString: WallPlane
@@ -297,3 +330,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3956867121986976633
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042690153043534462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6894428203817054813, guid: 3010a9dc165234146bc513d1b4630ce1, type: 3}
