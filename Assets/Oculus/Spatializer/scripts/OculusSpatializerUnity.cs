@@ -157,7 +157,7 @@ public class OculusSpatializerUnity : MonoBehaviour
 
     private void inititalizeRoomVisualization()
     {
-        Debug.Log("Oculus Audio dynamic room estimation visualization enabled");
+        //Debug.Log("Oculus Audio dynamic room estimation visualization enabled");
         transform.position = Vector3.zero; // move to the origin otherwise things are displaced
 
         // Create a particle system to visualize the ray cast hits

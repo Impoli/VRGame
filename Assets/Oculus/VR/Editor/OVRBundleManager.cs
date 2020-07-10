@@ -247,7 +247,7 @@ public class OVRBundleManager
 			// Get all the assets that the scene depends on and sort them by type
 			DateTime getDepStart = DateTime.Now;
 			string[] assetDependencies = AssetDatabase.GetDependencies(scene.scenePath);
-			Debug.Log("[OVRBundleManager] - " + scene.sceneName + " - Calculated scene asset dependencies in: " + (DateTime.Now - getDepStart).TotalSeconds);
+			//Debug.Log("[OVRBundleManager] - " + scene.sceneName + " - Calculated scene asset dependencies in: " + (DateTime.Now - getDepStart).TotalSeconds);
 			ProcessAssets(assetDependencies, scene.sceneName, ref uniqueAssetInSceneBundle, ref extToAssetList);
 
 			// Add the scene into it's own bundle
@@ -263,7 +263,7 @@ public class OVRBundleManager
 		{
 			int assetCount = extToAssetList[ext].Count;
 			int numChunks = (assetCount + BUNDLE_CHUNK_SIZE - 1) / BUNDLE_CHUNK_SIZE;
-			//Debug.Log(ext + " has " + assetCount + " asset(s) that will be split into " + numChunks + " chunk(s)");
+			////Debug.Log(ext + " has " + assetCount + " asset(s) that will be split into " + numChunks + " chunk(s)");
 			for (int i = 0; i < numChunks; i++)
 			{
 				List<string> assetChunkList;
@@ -279,19 +279,19 @@ public class OVRBundleManager
 				AssetBundleBuild build = new AssetBundleBuild();
 				build.assetBundleName = "asset_" + ext + i;
 				build.assetNames = assetChunkList.ToArray();
-				//Debug.Log("Chunk " + i + " has " + assetChunkList.Count + " asset(s)");
+				////Debug.Log("Chunk " + i + " has " + assetChunkList.Count + " asset(s)");
 				assetBundleBuilds.Add(build);
 			}
 		}
 
-		Debug.Log("[OVRBundleManager] - Created chucked scene bundles in: " + (DateTime.Now - labelingStart).TotalSeconds);
+		//Debug.Log("[OVRBundleManager] - Created chucked scene bundles in: " + (DateTime.Now - labelingStart).TotalSeconds);
 
 		// Build asset bundles
 		BuildPipeline.BuildAssetBundles(sceneBundleDirectory, assetBundleBuilds.ToArray(),
 				BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.Android);
 
 		double bundleBuildTime = (DateTime.Now - totalStart).TotalSeconds;
-		Debug.Log("[OVRBundleManager] - Total Time: " + bundleBuildTime);
+		//Debug.Log("[OVRBundleManager] - Total Time: " + bundleBuildTime);
 		OVRPlugin.SendEvent("oculus_bundle_tool", "bundle_build_time", bundleBuildTime.ToString());
 	}
 
@@ -380,7 +380,7 @@ public class OVRBundleManager
 			string output, error;
 			if (adbTool.RunCommand(pushCommand, null, out output, out error) == 0)
 			{
-				Debug.Log("[OVRBundleManager] Scene Load Data Pushed to Device.");
+				//Debug.Log("[OVRBundleManager] Scene Load Data Pushed to Device.");
 				OVRPlugin.SendEvent("oculus_bundle_tool", "transfer_bundle_time", (DateTime.Now - transferStart).TotalSeconds.ToString());
 				return true;
 			}
@@ -405,7 +405,7 @@ public class OVRBundleManager
 		if (adbTool.RunCommand(pullManifestCommand, null, out output, out error) == 0)
 		{
 			// An existing manifest file was found on device. Load hashes and upload bundles that have changed hashes.
-			Debug.Log("[OVRBundleManager] - Scene bundle manifest file found. Decoding changes . . .");
+			//Debug.Log("[OVRBundleManager] - Scene bundle manifest file found. Decoding changes . . .");
 
 			// Load hashes from remote manifest
 			AssetBundle remoteBundle = AssetBundle.LoadFromFile(Path.Combine(absoluteTempPath, BUNDLE_MANAGER_MASTER_BUNDLE));
@@ -512,7 +512,7 @@ public class OVRBundleManager
 			string[] pushBundleCommand = { "-d push", "\"" + absoluteBundlePath + "\"", "\"" + externalSceneCache + "\"" };
 			adbTool.RunCommandAsync(pushBundleCommand, null);
 		}
-		Debug.Log("[OVRBundleManager] - Transfer took " + (DateTime.Now - transferStart).TotalSeconds + " seconds.");
+		//Debug.Log("[OVRBundleManager] - Transfer took " + (DateTime.Now - transferStart).TotalSeconds + " seconds.");
 
 		// Delete stale bundles on device
 		if (bundlesToDelete.Count > 0)

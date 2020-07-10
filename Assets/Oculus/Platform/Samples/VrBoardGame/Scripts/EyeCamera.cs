@@ -15,7 +15,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		// the GameController to notify
 		[SerializeField] private GameController m_gameController = null;
 
-		// a tine ball in the distance to debug where the user is looking
+		// a tine ball in the distance to Debug where the user is looking
 		[SerializeField] private SphereCollider m_gazeTracker = null;
 
 		// the current Button, if any, being looked at
@@ -83,7 +83,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 				m_gameController.ClearProposedMove();
 			}
 
-			// moves the camera with the mouse - very useful for debugging in to 2D mode.
+			// moves the camera with the mouse - very useful for Debugging in to 2D mode.
 			if (Input.GetButton("Fire2"))
 			{
 				var v = Input.GetAxis("Mouse Y");

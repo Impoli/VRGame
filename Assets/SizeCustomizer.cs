@@ -21,7 +21,7 @@ public class SizeCustomizer : MonoBehaviour
 
         }
        
-       //Debug.Log("Ref Plate: " + GetComponent<Renderer>().bounds.size.x);
+       ////Debug.Log("Ref Plate: " + GetComponent<Renderer>().bounds.size.x);
     }
 
     public void newScale(GameObject theGameObject, float newSize)

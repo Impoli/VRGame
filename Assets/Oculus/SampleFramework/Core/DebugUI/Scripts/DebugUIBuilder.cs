@@ -23,11 +23,11 @@ public class DebugUIBuilder : MonoBehaviour
   // fix bug where it seems to appear at a random offset
   // support remove
 
-  // Convenience consts for clarity when using multiple debug panes. 
+  // Convenience consts for clarity when using multiple Debug panes. 
   // But note that you can an arbitrary number of panes if you add them in the inspector.
-  public const int DEBUG_PANE_CENTER = 0;
-  public const int DEBUG_PANE_RIGHT = 1;
-  public const int DEBUG_PANE_LEFT = 2;
+  public const int Debug_PANE_CENTER = 0;
+  public const int Debug_PANE_RIGHT = 1;
+  public const int Debug_PANE_LEFT = 2;
 
   [SerializeField]
   private RectTransform buttonPrefab = null;
@@ -120,7 +120,7 @@ public class DebugUIBuilder : MonoBehaviour
     lp.gameObject.SetActive(false);
 #if UNITY_EDITOR
     string scene = SceneManager.GetActiveScene().name;
-    OVRPlugin.SendEvent("debug_ui_builder",
+    OVRPlugin.SendEvent("Debug_ui_builder",
       ((scene == "DebugUI") ||
        (scene == "DistanceGrab") ||
        (scene == "OVROverlay") ||
@@ -183,7 +183,7 @@ public class DebugUIBuilder : MonoBehaviour
   }
 
   // Currently a slow brute-force method that lays out every element. 
-  // As this is intended as a debug UI, it might be fine, but there are many simple optimizations we can make.
+  // As this is intended as a Debug UI, it might be fine, but there are many simple optimizations we can make.
   private void Relayout()
   {
     for (int panelIdx = 0; panelIdx < targetContentPanels.Length; ++panelIdx)
@@ -210,7 +210,7 @@ public class DebugUIBuilder : MonoBehaviour
   {
     if (targetCanvas > targetContentPanels.Length)
     {
-      Debug.LogError("Attempted to add debug panel to canvas " + targetCanvas + ", but only " + targetContentPanels.Length + " panels were provided. Fix in the inspector or pass a lower value for target canvas.");
+      Debug.LogError("Attempted to add Debug panel to canvas " + targetCanvas + ", but only " + targetContentPanels.Length + " panels were provided. Fix in the inspector or pass a lower value for target canvas.");
       return;
     }
 

@@ -13,7 +13,7 @@ under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR COND
 ANY KIND, either express or implied. See the License for the specific language governing
 permissions and limitations under the License.
 ************************************************************************************/
-//#define DEBUG_OVERLAY_CANVAS
+//#define Debug_OVERLAY_CANVAS
 using UnityEngine;
 
 [RequireComponent(typeof(Canvas))]
@@ -90,7 +90,7 @@ public class OVROverlayCanvas : MonoBehaviour
 
 		GameObject overlayCamera = new GameObject(name + " Overlay Camera")
 		{
-#if !DEBUG_OVERLAY_CANVAS
+#if !Debug_OVERLAY_CANVAS
 			hideFlags = HideFlags.HideInHierarchy | HideFlags.NotEditable
 #endif
 		};
@@ -145,7 +145,7 @@ public class OVROverlayCanvas : MonoBehaviour
 
 		GameObject meshRenderer = new GameObject(name + " MeshRenderer")
 		{
-#if !DEBUG_OVERLAY_CANVAS
+#if !Debug_OVERLAY_CANVAS
 			hideFlags = HideFlags.HideInHierarchy | HideFlags.NotEditable
 #endif
 		};
@@ -159,7 +159,7 @@ public class OVROverlayCanvas : MonoBehaviour
 
 		GameObject overlay = new GameObject(name + " Overlay")
 		{
-#if !DEBUG_OVERLAY_CANVAS
+#if !Debug_OVERLAY_CANVAS
 			hideFlags = HideFlags.HideInHierarchy | HideFlags.NotEditable
 #endif
 		};

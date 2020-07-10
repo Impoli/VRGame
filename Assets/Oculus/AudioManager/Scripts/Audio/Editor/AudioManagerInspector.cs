@@ -158,7 +158,7 @@ public class AudioManagerInspector : Editor {
 			// and finally, remove it from the original group
 			origSoundList.RemoveAt( origIndex );
 			audioManager.soundGroupings[origGroup].soundList = origSoundList.ToArray();
-			Debug.Log( "> Moved '" + temp.name + "' from " + "'" + audioManager.soundGroupings[origGroup].name + "' to '" + audioManager.soundGroupings[moveToGroup].name );
+			//Debug.Log( "> Moved '" + temp.name + "' from " + "'" + audioManager.soundGroupings[origGroup].name + "' to '" + audioManager.soundGroupings[moveToGroup].name );
 			MarkDirty();
 			moveQueued = false;
 		}

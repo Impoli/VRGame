@@ -120,7 +120,7 @@ namespace Oculus.Platform
       audioSystemPlaybackFrequency = AudioSettings.outputSampleRate;
       CAPI.ovr_Voip_SetOutputSampleRate(SampleRateToEnum(audioSystemPlaybackFrequency));
       if(verboseLogging) {
-        Debug.LogFormat("freq {0}", audioSystemPlaybackFrequency);
+        //Debug.LogFormat("freq {0}", audioSystemPlaybackFrequency);
       }
     }
 
@@ -143,7 +143,7 @@ namespace Oculus.Platform
 
       if (!audioSource.isPlaying && pcmSource.PeekSizeElements() >= MSToElements(initialPlaybackDelayMS)) {
         if(verboseLogging) {
-          Debug.LogFormat("buffered {0} elements, starting playback", pcmSource.PeekSizeElements());
+          //Debug.LogFormat("buffered {0} elements, starting playback", pcmSource.PeekSizeElements());
         }
         audioSource.Play();
       }

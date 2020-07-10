@@ -161,7 +161,7 @@ namespace OculusSampleFramework
 
 		private void Update()
 		{
-			// uncomment to debug the track path
+			// uncomment to Debug the track path
 			//DrawDebugLines();
 		}
 

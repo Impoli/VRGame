@@ -12,12 +12,12 @@ namespace Oculus.Platform
 
     BufferedAudioStream bufferedAudioStream;
     Decoder decoder;
-    protected List<float> debugOutputData;
+    protected List<float> DebugOutputData;
 
     void Start()
     {
       AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-      Debug.Log(audioSource);
+      //Debug.Log(audioSource);
       audioSource.spatialize = spatialize;
       bufferedAudioStream = new BufferedAudioStream(audioSource);
       decoder = new Decoder();
@@ -38,9 +38,9 @@ namespace Oculus.Platform
       if (decompressedData != null && decompressedData.Length > 0)
       {
         bufferedAudioStream.AddData(decompressedData);
-        if (debugOutputData != null)
+        if (DebugOutputData != null)
         {
-          debugOutputData.AddRange(decompressedData);
+          DebugOutputData.AddRange(decompressedData);
         }
       }
     }

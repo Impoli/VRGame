@@ -133,7 +133,7 @@ namespace Oculus.Platform.Samples.VrHoops
 				// ID comparison is used to decide who Connects and who Accepts
 				if (PlatformManager.MyID < player.ID)
 				{
-					Debug.Log ("P2P Try Connect to: " + player.ID);
+					//Debug.Log ("P2P Try Connect to: " + player.ID);
 					Net.Connect (player.ID);
 				}
 			}
@@ -152,18 +152,18 @@ namespace Oculus.Platform.Samples.VrHoops
 		{
 			if (m_remotePlayers.ContainsKey(msg.Data.ID))
 			{
-				Debug.LogFormat("P2P Accepting Connection request from {0}", msg.Data.ID);
+				//Debug.LogFormat("P2P Accepting Connection request from {0}", msg.Data.ID);
 				Net.Accept(msg.Data.ID);
 			}
 			else
 			{
-				Debug.LogFormat("P2P Ignoring unauthorized Connection request from {0}", msg.Data.ID);
+				//Debug.LogFormat("P2P Ignoring unauthorized Connection request from {0}", msg.Data.ID);
 			}
 		}
 
 		void ConnectionStateChangedCallback(Message<NetworkingPeer> msg)
 		{
-			Debug.LogFormat("P2P {0} Connection state changed to {1}", msg.Data.ID, msg.Data.State);
+			//Debug.LogFormat("P2P {0} Connection state changed to {1}", msg.Data.ID, msg.Data.State);
 
 			if (m_remotePlayers.ContainsKey(msg.Data.ID))
 			{
@@ -286,7 +286,7 @@ namespace Oculus.Platform.Samples.VrHoops
 					}
 				}
 				mean /= meanCount;
-				Debug.LogFormat("Time offset to {0} is {1}", remoteID, mean);
+				//Debug.LogFormat("Time offset to {0} is {1}", remoteID, mean);
 
 				m_remoteSyncTimeCache.Remove(remoteID);
 				m_remoteSentTimeCache.Remove(remoteID);

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject RightHand;
     public GameObject LeftHand;
     public GameObject Player;
+    public bool GameOver { get; set; } = false;
     public bool templateIsEnabled { get; private set; } = false;
 
 
@@ -62,6 +63,18 @@ public class GameManager : MonoBehaviour
             Player.SetActive(true);
         }
 
+
+    }
+
+    public static void NewGame()
+    {
+        GameManager.Instance.points = 0;
+        GameManager.Instance.currentPoints = 0;
+        GameManager.Instance.wallIsAlive = false;
+        GameManager.Instance.wallPoints = 0;
+        GameManager.Instance.currentWallGapX = 0;
+        GameManager.Instance.GameOver = false;
+        GameManager.Instance.templateIsEnabled = false;
 
     }
 

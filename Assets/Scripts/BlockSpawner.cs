@@ -91,13 +91,13 @@ public class BlockSpawner : MonoBehaviour
 
         //    int blockNum = Random.Range(0, usedBlocks.Length);
         //    int prob = (int)usedBlocks[blockNum].GetComponent<BlockPoints>().probability;
-        //    Debug.Log("Prob: " + prob);
+        //    //Debug.Log("Prob: " + prob);
 
         //    if ( prob != 0)
         //    {
         //        int balancing = 2; // the higher the value the less difference between probabilities
         //        int ranProb = Random.Range(1, prob + balancing);
-        //        Debug.Log(ranProb);
+        //        //Debug.Log(ranProb);
         //        if (ranProb == 1)
         //        {
         //            block = usedBlocks[blockNum];

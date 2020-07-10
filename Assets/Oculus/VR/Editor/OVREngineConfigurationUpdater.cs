@@ -48,7 +48,7 @@ class OVREngineConfigurationUpdater
 		PlayerPrefs.SetInt(prefName, newValue);
 		PlayerPrefs.Save();
 
-		Debug.Log("Using required project settings: " + setPrefsForUtilities);
+		//Debug.Log("Using required project settings: " + setPrefsForUtilities);
 	}
 	
 #if UNITY_2017_3_OR_NEWER
@@ -137,7 +137,7 @@ class OVREngineConfigurationUpdater
 
 		if (PlayerSettings.defaultInterfaceOrientation != UIOrientation.LandscapeLeft)
 		{
-			Debug.Log("OVREngineConfigurationUpdater: Setting orientation to Landscape Left");
+			//Debug.Log("OVREngineConfigurationUpdater: Setting orientation to Landscape Left");
 			// Default screen orientation must be set to landscape left.
 			PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
 		}
@@ -155,7 +155,7 @@ class OVREngineConfigurationUpdater
 			// black.
 			if (QualitySettings.antiAliasing != 0 && QualitySettings.antiAliasing != 1)
 			{
-				Debug.Log("OVREngineConfigurationUpdater: Disabling antiAliasing");
+				//Debug.Log("OVREngineConfigurationUpdater: Disabling antiAliasing");
 				QualitySettings.antiAliasing = 1;
 			}
 		}
@@ -163,7 +163,7 @@ class OVREngineConfigurationUpdater
 
 		if (QualitySettings.vSyncCount != 0)
 		{
-			Debug.Log("OVREngineConfigurationUpdater: Setting vsyncCount to 0");
+			//Debug.Log("OVREngineConfigurationUpdater: Setting vsyncCount to 0");
 			// We sync in the TimeWarp, so we don't want unity syncing elsewhere.
 			QualitySettings.vSyncCount = 0;
 		}
@@ -179,7 +179,7 @@ class OVREngineConfigurationUpdater
 		{
 			if (mgrs [i].isActiveAndEnabled)
 			{
-				Debug.Log ("Enabling Unity VR support");
+				//Debug.Log ("Enabling Unity VR support");
 				PlayerSettings.virtualRealitySupported = true;
 
 				bool oculusFound = false;

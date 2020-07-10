@@ -85,7 +85,7 @@ namespace Oculus.Platform.Samples.VrHoops
 		// something more graceful.
 		public static void TerminateWithError(Message msg)
 		{
-			Debug.Log("Error: " + msg.GetError().Message);
+			//Debug.Log("Error: " + msg.GetError().Message);
 			UnityEngine.Application.Quit();
 		}
 

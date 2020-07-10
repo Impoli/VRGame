@@ -81,11 +81,11 @@ public abstract class OVRCameraComposition : OVRComposition {
 				OVRPlugin.SetCameraDevicePreferredDepthQuality(cameraDevice, quality);
 			}
 
-			Debug.LogFormat("Opening camera device {0}", cameraDevice);
+			//Debug.LogFormat("Opening camera device {0}", cameraDevice);
 			OVRPlugin.OpenCameraDevice(cameraDevice);
 			if (OVRPlugin.HasCameraDeviceOpened(cameraDevice))
 			{
-				Debug.LogFormat("Opened camera device {0}", cameraDevice);
+				//Debug.LogFormat("Opened camera device {0}", cameraDevice);
 				hasCameraDeviceOpened = true;
 			}
 		}
@@ -96,7 +96,7 @@ public abstract class OVRCameraComposition : OVRComposition {
 		OVRCompositionUtil.SafeDestroy(ref cameraFramePlaneObject);
 		if (hasCameraDeviceOpened)
 		{
-			Debug.LogFormat("Close camera device {0}", cameraDevice);
+			//Debug.LogFormat("Close camera device {0}", cameraDevice);
 			OVRPlugin.CloseCameraDevice(cameraDevice);
 		}
 	}
@@ -210,7 +210,7 @@ public abstract class OVRCameraComposition : OVRComposition {
 				{
 					if (nullcameraRigWarningDisplayed)
 					{
-						Debug.Log("OVRCameraRig/CenterEyeAnchor object found. Virtual green screen is activated");
+						//Debug.Log("OVRCameraRig/CenterEyeAnchor object found. Virtual green screen is activated");
 						nullcameraRigWarningDisplayed = false;
 					}
 

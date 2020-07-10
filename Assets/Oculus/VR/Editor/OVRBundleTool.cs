@@ -11,7 +11,7 @@ using UnityEditor;
 public class OVRBundleTool : EditorWindow
 {
 	private static List<EditorSceneInfo> buildableScenes;
-	private static Vector2 debugLogScroll = new Vector2(0, 0);
+	private static Vector2 DebugLogScroll = new Vector2(0, 0);
 	private static bool invalidBuildableScene;
 
 	private static string toolLog;
@@ -206,7 +206,7 @@ public class OVRBundleTool : EditorWindow
 					statusMesssage = "<color=red>APK not installed. Press build and deploy to install the transition APK.</color>";
 					break;
 				case ApkStatus.DEVICE_NOT_CONNECTED:
-					statusMesssage = "<color=red>Device not connected via ADB. Please connect device and allow debugging.</color>";
+					statusMesssage = "<color=red>Device not connected via ADB. Please connect device and allow Debugging.</color>";
 					break;
 				case ApkStatus.UNKNOWN:
 				default:
@@ -313,7 +313,7 @@ public class OVRBundleTool : EditorWindow
 
 		if (!string.IsNullOrEmpty(toolLog))
 		{
-			debugLogScroll = EditorGUILayout.BeginScrollView(debugLogScroll, GUILayout.ExpandHeight(true));
+			DebugLogScroll = EditorGUILayout.BeginScrollView(DebugLogScroll, GUILayout.ExpandHeight(true));
 			EditorGUILayout.SelectableLabel(toolLog, logBoxStyle, GUILayout.Height(logBoxSize.y + logBoxSpacing));
 			EditorGUILayout.EndScrollView();
 		}
@@ -443,7 +443,7 @@ public class OVRBundleTool : EditorWindow
 		GUIContent logContent = new GUIContent(toolLog);
 		logBoxSize = logBoxStyle.CalcSize(logContent);
 
-		debugLogScroll.y = logBoxSize.y + logBoxSpacing;
+		DebugLogScroll.y = logBoxSize.y + logBoxSpacing;
 	}
 
 	public static void PrintError(string error = "")

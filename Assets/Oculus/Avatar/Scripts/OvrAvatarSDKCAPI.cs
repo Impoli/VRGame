@@ -826,7 +826,7 @@ namespace Oculus.Avatar
         static IntPtr nativeAvatarLightsData = IntPtr.Zero;
         static IntPtr DebugLineCountData = IntPtr.Zero;
         static float[] scratchBufferFloat = new float[16];
-        static GameObject debugLineGo;
+        static GameObject DebugLineGo;
         public static void Initialize()
         {
             nativeVisemeData = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(ovrAvatarVisemes)));
@@ -834,8 +834,8 @@ namespace Oculus.Avatar
             nativeAvatarLightsData = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(ovrAvatarLights)));
             DebugLineCountData = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(uint)));
 
-            debugLineGo = new GameObject();
-            debugLineGo.name = "AvatarSDKDebugDrawHelper";
+            DebugLineGo = new GameObject();
+            DebugLineGo.name = "AvatarSDKDebugDrawHelper";
         }
 
         public static void Shutdown()
@@ -845,7 +845,7 @@ namespace Oculus.Avatar
             Marshal.FreeHGlobal(nativeAvatarLightsData);
             Marshal.FreeHGlobal(DebugLineCountData);
 
-            debugLineGo = null;
+            DebugLineGo = null;
         }
 
 
@@ -1529,14 +1529,14 @@ namespace Oculus.Avatar
 
         public static void ovrAvatar_DrawDebugLines()
         {
-            IntPtr debugLinePtr = ovrAvatar_GetDebugLines_Native(DebugLineCountData);
+            IntPtr DebugLinePtr = ovrAvatar_GetDebugLines_Native(DebugLineCountData);
             int lineCount = Marshal.ReadInt32(DebugLineCountData);
 
             ovrAvatarDebugLine tempLine = new ovrAvatarDebugLine();
             for (int i = 0; i < lineCount; i++)
             {
                 var offset = i * Marshal.SizeOf(typeof(ovrAvatarDebugLine));
-                Marshal.Copy(new IntPtr(debugLinePtr.ToInt64() + offset), scratchBufferFloat, 0, 9);
+                Marshal.Copy(new IntPtr(DebugLinePtr.ToInt64() + offset), scratchBufferFloat, 0, 9);
                 tempLine.startPoint.x = scratchBufferFloat[0];
                 tempLine.startPoint.y = scratchBufferFloat[1];
                 tempLine.startPoint.z = -scratchBufferFloat[2];
@@ -1549,12 +1549,12 @@ namespace Oculus.Avatar
                 tempLine.color.y = scratchBufferFloat[7];
                 tempLine.color.z = scratchBufferFloat[8];
 
-                tempLine.context = (ovrAvatarDebugContext)Marshal.ReadInt32(new IntPtr(debugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugLine), "context").ToInt64()));
-                tempLine.text = Marshal.ReadIntPtr(new IntPtr(debugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugLine), "text").ToInt64()));
+                tempLine.context = (ovrAvatarDebugContext)Marshal.ReadInt32(new IntPtr(DebugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugLine), "context").ToInt64()));
+                tempLine.text = Marshal.ReadIntPtr(new IntPtr(DebugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugLine), "text").ToInt64()));
 
                 Debug.DrawLine(tempLine.startPoint, tempLine.endPoint, new Color(tempLine.color.x, tempLine.color.y, tempLine.color.z));
 
-                // TODO: Decide what to do with the text. Can only debug render in OnGUI()
+                // TODO: Decide what to do with the text. Can only Debug render in OnGUI()
                 //if (tempLine.text != IntPtr.Zero)
                 //{
                 //    string text = Marshal.PtrToStringAnsi(tempLine.text);
@@ -1562,31 +1562,31 @@ namespace Oculus.Avatar
                 //}
             }
 
-            debugLinePtr = ovrAvatar_GetDebugTransforms_Native(DebugLineCountData);
+            DebugLinePtr = ovrAvatar_GetDebugTransforms_Native(DebugLineCountData);
             lineCount = Marshal.ReadInt32(DebugLineCountData);
 
             ovrAvatarDebugTransform tempTrans = new ovrAvatarDebugTransform();
             for (int i = 0; i < lineCount; i++)
             {
                 var offset = i * Marshal.SizeOf(typeof(ovrAvatarDebugTransform));
-                Marshal.Copy(new IntPtr(debugLinePtr.ToInt64() + offset), scratchBufferFloat, 0, 10);
+                Marshal.Copy(new IntPtr(DebugLinePtr.ToInt64() + offset), scratchBufferFloat, 0, 10);
 
                 OvrAvatar.ConvertTransform(scratchBufferFloat, ref tempTrans.transform);
-                OvrAvatar.ConvertTransform(tempTrans.transform, debugLineGo.transform);
+                OvrAvatar.ConvertTransform(tempTrans.transform, DebugLineGo.transform);
 
-                tempTrans.context = (ovrAvatarDebugContext)Marshal.ReadInt32(new IntPtr(debugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugTransform), "context").ToInt64()));
-                tempTrans.text = Marshal.ReadIntPtr(new IntPtr(debugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugTransform), "text").ToInt64()));
+                tempTrans.context = (ovrAvatarDebugContext)Marshal.ReadInt32(new IntPtr(DebugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugTransform), "context").ToInt64()));
+                tempTrans.text = Marshal.ReadIntPtr(new IntPtr(DebugLinePtr.ToInt64() + offset + Marshal.OffsetOf(typeof(ovrAvatarDebugTransform), "text").ToInt64()));
 
                 const float SCALE_FACTOR = 0.1f;
-                Vector3 transUp = SCALE_FACTOR * debugLineGo.transform.TransformVector(Vector3.up);
-                Vector3 transRight = SCALE_FACTOR * debugLineGo.transform.TransformVector(Vector3.right);
-                Vector3 transFwd = SCALE_FACTOR * debugLineGo.transform.TransformVector(Vector3.forward);
+                Vector3 transUp = SCALE_FACTOR * DebugLineGo.transform.TransformVector(Vector3.up);
+                Vector3 transRight = SCALE_FACTOR * DebugLineGo.transform.TransformVector(Vector3.right);
+                Vector3 transFwd = SCALE_FACTOR * DebugLineGo.transform.TransformVector(Vector3.forward);
 
-                Debug.DrawLine(debugLineGo.transform.position, debugLineGo.transform.position + transUp, Color.green);
-                Debug.DrawLine(debugLineGo.transform.position, debugLineGo.transform.position + transRight, Color.red);
-                Debug.DrawLine(debugLineGo.transform.position, debugLineGo.transform.position + transFwd, Color.blue);
+                Debug.DrawLine(DebugLineGo.transform.position, DebugLineGo.transform.position + transUp, Color.green);
+                Debug.DrawLine(DebugLineGo.transform.position, DebugLineGo.transform.position + transRight, Color.red);
+                Debug.DrawLine(DebugLineGo.transform.position, DebugLineGo.transform.position + transFwd, Color.blue);
 
-                // TODO: Decide what to do with the text. Can only debug render in OnGUI()
+                // TODO: Decide what to do with the text. Can only Debug render in OnGUI()
                 //if (tempTrans.text != IntPtr.Zero)
                 //{
                 //    string text = Marshal.PtrToStringAnsi(tempTrans.text);

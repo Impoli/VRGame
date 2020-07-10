@@ -63,14 +63,14 @@ namespace Oculus.Platform.Samples.VrBoardGame
 			m_myID = msg.Data.ID;
 			m_myOculusID = msg.Data.OculusID;
 
-			Debug.Log(" I am " + m_myOculusID);
+			//Debug.Log(" I am " + m_myOculusID);
 		}
 
 		// In this example, for most errors, we terminate the Application.  A full App would do
 		// something more graceful.
 		public static void TerminateWithError(Message msg)
 		{
-			Debug.Log("Error: " + msg.GetError().Message);
+			//Debug.Log("Error: " + msg.GetError().Message);
 			UnityEngine.Application.Quit();
 		}
 

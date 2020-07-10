@@ -70,7 +70,7 @@ class ONSPPropagation
         try
         {
             WwisePluginInterface.ovrAudio_GetPluginContext(out temp, ClientType.OVRA_CLIENT_TYPE_WWISE_UNKNOWN);
-            Debug.Log("Propagation initialized with Wwise Oculus Spatializer plugin");
+            //Debug.Log("Propagation initialized with Wwise Oculus Spatializer plugin");
             return new WwisePluginInterface();
         }
         catch(System.DllNotFoundException)
@@ -80,7 +80,7 @@ class ONSPPropagation
         try
         {
             FMODPluginInterface.ovrAudio_GetPluginContext(out temp, ClientType.OVRA_CLIENT_TYPE_FMOD);
-            Debug.Log("Propagation initialized with FMOD Oculus Spatializer plugin");
+            //Debug.Log("Propagation initialized with FMOD Oculus Spatializer plugin");
             return new FMODPluginInterface();
         }
         catch (System.DllNotFoundException)
@@ -88,7 +88,7 @@ class ONSPPropagation
             // this is fine
         }
 
-        Debug.Log("Propagation initialized with Unity Oculus Spatializer plugin");
+        //Debug.Log("Propagation initialized with Unity Oculus Spatializer plugin");
         return new UnityNativeInterface();
     }
 

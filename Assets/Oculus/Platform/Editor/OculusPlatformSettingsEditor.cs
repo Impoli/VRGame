@@ -101,7 +101,7 @@ namespace Oculus.Platform
           }
 
           var useStandaloneLabel = "Use Standalone Platform [?]";
-          var useStandaloneHint = "If this is checked your app will use a debug platform with the User info below.  "
+          var useStandaloneHint = "If this is checked your app will use a Debug platform with the User info below.  "
             + "Otherwise your app will connect to the Oculus Platform.  This setting only applies to the Unity Editor";
           PlatformSettings.UseStandalonePlatform =
             MakeToggle(new GUIContent(useStandaloneLabel, useStandaloneHint), PlatformSettings.UseStandalonePlatform);

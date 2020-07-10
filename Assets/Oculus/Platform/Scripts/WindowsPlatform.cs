@@ -12,7 +12,7 @@ namespace Oculus.Platform
 
     void CPPLogCallback(IntPtr tag, IntPtr message)
     {
-      Debug.Log(string.Format("{0}: {1}", Marshal.PtrToStringAnsi(tag), Marshal.PtrToStringAnsi(message)));
+      //Debug.Log(string.Format("{0}: {1}", Marshal.PtrToStringAnsi(tag), Marshal.PtrToStringAnsi(message)));
     }
 
     IntPtr getCallbackPointer()

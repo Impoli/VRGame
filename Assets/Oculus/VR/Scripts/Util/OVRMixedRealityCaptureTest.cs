@@ -55,9 +55,9 @@ public class OVRMixedRealityCaptureTest : MonoBehaviour {
 #endif
 
 		OVRPlugin.ResetDefaultExternalCamera();
-		Debug.LogFormat("GetExternalCameraCount before adding manual external camera {0}", OVRPlugin.GetExternalCameraCount());
+		//Debug.LogFormat("GetExternalCameraCount before adding manual external camera {0}", OVRPlugin.GetExternalCameraCount());
 		UpdateDefaultExternalCamera();
-		Debug.LogFormat("GetExternalCameraCount after adding manual external camera {0}", OVRPlugin.GetExternalCameraCount());
+		//Debug.LogFormat("GetExternalCameraCount after adding manual external camera {0}", OVRPlugin.GetExternalCameraCount());
 
 		// obtain default FOV
 		{
@@ -172,7 +172,7 @@ public class OVRMixedRealityCaptureTest : MonoBehaviour {
 				currentMode = currentMode + 1;
 			}
 
-			Debug.LogFormat("Camera mode change to {0}", currentMode);
+			//Debug.LogFormat("Camera mode change to {0}", currentMode);
 		}
 		
 		if (currentMode == CameraMode.Normal)

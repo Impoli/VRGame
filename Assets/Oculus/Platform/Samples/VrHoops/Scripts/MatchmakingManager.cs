@@ -56,7 +56,7 @@ namespace Oculus.Platform.Samples.VrHoops
 		{
 			if (msg.IsError)
 			{
-				Debug.Log(msg.GetError().Message);
+				//Debug.Log(msg.GetError().Message);
 				EnqueueResultCallback(false);
 				return;
 			}
@@ -72,11 +72,11 @@ namespace Oculus.Platform.Samples.VrHoops
 		{
 			if (msg.IsError)
 			{
-				Debug.Log (msg.GetError().Message);
+				//Debug.Log (msg.GetError().Message);
 				EnqueueResultCallback(false);
 				return;
 			}
-			Debug.Log ("Match found and room joined " + m_matchRoom);
+			//Debug.Log ("Match found and room joined " + m_matchRoom);
 
 			EnqueueResultCallback(true);
 

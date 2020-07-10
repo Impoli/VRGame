@@ -20,13 +20,13 @@ using UnityEngine.UI;
 
 //-------------------------------------------------------------------------------------
 /// <summary>
-/// Shows debug information on a heads-up display.
+/// Shows Debug information on a heads-up display.
 /// </summary>
 public class OVRDebugInfo : MonoBehaviour
 {
     #region GameObjects for Debug Information UIs
-    GameObject debugUIManager;
-    GameObject debugUIObject;
+    GameObject DebugUIManager;
+    GameObject DebugUIObject;
     GameObject riftPresent;
     GameObject fps;
     GameObject ipd;
@@ -86,17 +86,17 @@ public class OVRDebugInfo : MonoBehaviour
     void Awake()
     {
         // Create canvas for using new GUI
-        debugUIManager = new GameObject();
-        debugUIManager.name = "DebugUIManager";
-        debugUIManager.transform.parent = GameObject.Find("LeftEyeAnchor").transform;
+        DebugUIManager = new GameObject();
+        DebugUIManager.name = "DebugUIManager";
+        DebugUIManager.transform.parent = GameObject.Find("LeftEyeAnchor").transform;
 
-        RectTransform rectTransform = debugUIManager.AddComponent<RectTransform>();
+        RectTransform rectTransform = DebugUIManager.AddComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(100f, 100f);
         rectTransform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
         rectTransform.localPosition = new Vector3(0.01f, 0.17f, 0.53f);
         rectTransform.localEulerAngles = Vector3.zero;
 
-        Canvas canvas = debugUIManager.AddComponent<Canvas>();
+        Canvas canvas = DebugUIManager.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
         canvas.pixelPerfect = false;
     }
@@ -122,13 +122,13 @@ public class OVRDebugInfo : MonoBehaviour
         // Presenting VR variables
         if (showVRVars)
         {
-            debugUIManager.SetActive(true);
+            DebugUIManager.SetActive(true);
             UpdateVariable();
             UpdateStrings();
         }
         else
         {
-            debugUIManager.SetActive(false);
+            DebugUIManager.SetActive(false);
         }
     }
 
@@ -150,12 +150,12 @@ public class OVRDebugInfo : MonoBehaviour
         float posY = 0.0f;
         int fontSize = 20;
 
-        debugUIObject = new GameObject();
-        debugUIObject.name = "DebugInfo";
-        debugUIObject.transform.parent = GameObject.Find("DebugUIManager").transform;
-        debugUIObject.transform.localPosition = new Vector3(0.0f, 100.0f, 0.0f);
-        debugUIObject.transform.localEulerAngles = Vector3.zero;
-        debugUIObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        DebugUIObject = new GameObject();
+        DebugUIObject.name = "DebugInfo";
+        DebugUIObject.transform.parent = GameObject.Find("DebugUIManager").transform;
+        DebugUIObject.transform.localPosition = new Vector3(0.0f, 100.0f, 0.0f);
+        DebugUIObject.transform.localEulerAngles = Vector3.zero;
+        DebugUIObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         // Print out for FPS
         if (!string.IsNullOrEmpty(strFPS))
@@ -224,7 +224,7 @@ public class OVRDebugInfo : MonoBehaviour
     /// </summary>
     void UpdateStrings()
     {
-        if (debugUIObject == null)
+        if (DebugUIObject == null)
             return;
 
         if (!string.IsNullOrEmpty(strFPS))
@@ -283,7 +283,7 @@ public class OVRDebugInfo : MonoBehaviour
     {
         gameObject = ComponentComposition(gameObject);
         gameObject.name = name;
-        gameObject.transform.SetParent(debugUIObject.transform);
+        gameObject.transform.SetParent(DebugUIObject.transform);
 
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         rectTransform.localPosition = new Vector3(0.0f, posY -= offsetY, 0.0f);

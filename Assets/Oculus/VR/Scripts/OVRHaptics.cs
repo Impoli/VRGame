@@ -179,7 +179,7 @@ public static class OVRHaptics
 				else
 					m_numPredictionMisses++;
 
-				//Debug.Log(hapticsState.SamplesAvailable + "a " + hapticsState.SamplesQueued + "q " + expectedSamples + "e "
+				////Debug.Log(hapticsState.SamplesAvailable + "a " + hapticsState.SamplesQueued + "q " + expectedSamples + "e "
 				//+ "Prediction Accuracy: " + m_numPredictionHits / (float)(m_numPredictionMisses + m_numPredictionHits));
 
 				if ((expectedSamples > 0) && (hapticsState.SamplesQueued == 0))

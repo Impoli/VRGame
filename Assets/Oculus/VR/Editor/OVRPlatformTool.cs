@@ -26,7 +26,7 @@ namespace Assets.Oculus.VR.Editor
 
 		static private Process ovrPlatUtilProcess;
 		Vector2 commandMenuScroll;
-		Vector2 debugLogScroll;
+		Vector2 DebugLogScroll;
 
 		static public string log;
 
@@ -354,7 +354,7 @@ namespace Assets.Oculus.VR.Editor
 
 			GUILayout.Space(SINGLE_LINE_SPACING);
 
-			debugLogScroll = EditorGUILayout.BeginScrollView(debugLogScroll);
+			DebugLogScroll = EditorGUILayout.BeginScrollView(DebugLogScroll);
 			GUIStyle logBoxStyle = new GUIStyle();
 			logBoxStyle.margin.left = 5;
 			logBoxStyle.wordWrap = true;

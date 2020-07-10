@@ -2,7 +2,7 @@ namespace Oculus.Platform.Samples.VrHoops
 {
 	using UnityEngine;
 
-	// Helper class to attach to the MainCamera so it can be moved with the mouse while debugging
+	// Helper class to attach to the MainCamera so it can be moved with the mouse while Debugging
 	// in 2D mode on a PC.
 	public class Camera2DController : MonoBehaviour
 	{

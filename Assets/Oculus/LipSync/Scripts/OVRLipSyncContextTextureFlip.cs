@@ -60,7 +60,7 @@ public class OVRLipSyncContextTextureFlip : MonoBehaviour
         if (lipsyncContext == null)
         {
             Debug.LogWarning("LipSyncContextTextureFlip.Start WARNING:" +
-                " No lip sync context component set to object");
+            " No lip sync context component set to object");
         }
         else
         {

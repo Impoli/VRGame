@@ -344,7 +344,7 @@ public class RichPresenceSample : MonoBehaviour
 
   private void UpdateConsole(string value)
   {
-    Debug.Log(value);
+    //Debug.Log(value);
 
     InVRConsole.text =
       "Scroll Up/Down on Right Thumbstick\n(A) - Set Rich Presence to selected\n(B) - Clear Rich Presence\n\n" + value;

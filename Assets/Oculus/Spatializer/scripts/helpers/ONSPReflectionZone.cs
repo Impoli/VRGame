@@ -127,7 +127,7 @@ public class ONSPReflectionZone : MonoBehaviour
 	{
         if (mixerSnapshot != null)
         {
-            Debug.Log("Setting off snapshot " + mixerSnapshot.name);
+            //Debug.Log("Setting off snapshot " + mixerSnapshot.name);
             mixerSnapshot.TransitionTo(fadeTime);
 
             // Set the current snapshot to be equal to this one
@@ -136,7 +136,7 @@ public class ONSPReflectionZone : MonoBehaviour
         }
         else
         {
-            Debug.Log("Mixer snapshot not set - Please ensure play area has at least one encompassing snapshot.");
+            //Debug.Log("Mixer snapshot not set - Please ensure play area has at least one encompassing snapshot.");
         }
     }
 
@@ -148,7 +148,7 @@ public class ONSPReflectionZone : MonoBehaviour
 	{
         if(mss.mixerSnapshot != null)
         {
-            Debug.Log("Setting off snapshot " + mss.mixerSnapshot.name);
+            //Debug.Log("Setting off snapshot " + mss.mixerSnapshot.name);
             mss.mixerSnapshot.TransitionTo(mss.fadeTime);
 
             // Set the current snapshot to be equal to this one
@@ -158,7 +158,7 @@ public class ONSPReflectionZone : MonoBehaviour
         }
         else
         {
-            Debug.Log("Mixer snapshot not set - Please ensure play area has at least one encompassing snapshot.");
+            //Debug.Log("Mixer snapshot not set - Please ensure play area has at least one encompassing snapshot.");
         }
     }
 }

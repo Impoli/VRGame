@@ -315,7 +315,7 @@ public class SocialPlatformManager : MonoBehaviour
 
     public void LogOutputLine(string line)
     {
-        Debug.Log(Time.time + ": " + line);
+        //Debug.Log(Time.time + ": " + line);
     }
 
     // For most errors we terminate the Application since this example doesn't make

@@ -7,7 +7,7 @@ language governing permissions and limitations under the license.
 
 ************************************************************************************/
 
-#define DEBUG_TELEPORT_EVENT_HANDLERS
+#define Debug_TELEPORT_EVENT_HANDLERS
 
 using System;
 using UnityEngine;

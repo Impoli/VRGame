@@ -80,7 +80,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 				return;
 			}
 
-			Debug.Log("Launched Invite to join Room: " + msg.Data);
+			//Debug.Log("Launched Invite to join Room: " + msg.Data);
 
 			m_roomID = Convert.ToUInt64(msg.GetString());
 		}

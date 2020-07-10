@@ -8,7 +8,7 @@ using Oculus.Platform.Models;
 public class PlayerController : SocialPlatformManager
 {
 
-    // Secondary camera to debug and view the whole scene from above
+    // Secondary camera to Debug and view the whole scene from above
     public Camera spyCamera;
 
     // The OVRCameraRig for the main player so we can disable it

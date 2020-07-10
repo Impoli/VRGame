@@ -41,7 +41,7 @@ class ONSPPropagationSerializationManager
     public int callbackOrder { get { return 0; } }
     public void OnPreprocessBuild(BuildTarget target, string path)
     {
-        Debug.Log("ONSPPropagationSerializationManager.OnPreprocessBuild for target " + target + " at path " + path);
+        //Debug.Log("ONSPPropagationSerializationManager.OnPreprocessBuild for target " + target + " at path " + path);
     }
 
     [MenuItem("Oculus/Spatializer/Build audio geometry for current scene")]
@@ -53,7 +53,7 @@ class ONSPPropagationSerializationManager
     [MenuItem("Oculus/Spatializer/Rebuild audio geometry all scenes")]
     public static void RebuildAudioGeometryForAllScenes()
     {
-        Debug.Log("Rebuilding geometry for all scenes");
+        //Debug.Log("Rebuilding geometry for all scenes");
 
         System.IO.Directory.Delete(ONSPPropagationGeometry.GeometryAssetPath, true);
 
@@ -70,7 +70,7 @@ class ONSPPropagationSerializationManager
 
     private static void BuildAudioGeometryForScene(Scene scene)
     {
-        Debug.Log("Building audio geometry for scene " + scene.name);
+        //Debug.Log("Building audio geometry for scene " + scene.name);
 
         List<GameObject> rootObjects = new List<GameObject>();
         scene.GetRootGameObjects(rootObjects);
@@ -98,6 +98,6 @@ class ONSPPropagationSerializationManager
             }
         }
 
-        Debug.Log("Successfully built " + fileNames.Count + " geometry objects");
+        //Debug.Log("Successfully built " + fileNames.Count + " geometry objects");
     }
 }

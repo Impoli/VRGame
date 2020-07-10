@@ -26,8 +26,8 @@ public class DebugUISample : MonoBehaviour
         DebugUIBuilder.instance.AddRadio("Radio2", "group", delegate(Toggle t) { RadioPressed("Radio2", "group", t); }) ;
         DebugUIBuilder.instance.AddLabel("Secondary Tab", 1);
 		DebugUIBuilder.instance.AddDivider(1);
-        DebugUIBuilder.instance.AddRadio("Side Radio 1", "group2", delegate(Toggle t) { RadioPressed("Side Radio 1", "group2", t); }, DebugUIBuilder.DEBUG_PANE_RIGHT);
-        DebugUIBuilder.instance.AddRadio("Side Radio 2", "group2", delegate(Toggle t) { RadioPressed("Side Radio 2", "group2", t); }, DebugUIBuilder.DEBUG_PANE_RIGHT);
+        DebugUIBuilder.instance.AddRadio("Side Radio 1", "group2", delegate(Toggle t) { RadioPressed("Side Radio 1", "group2", t); }, DebugUIBuilder.Debug_PANE_RIGHT);
+        DebugUIBuilder.instance.AddRadio("Side Radio 2", "group2", delegate(Toggle t) { RadioPressed("Side Radio 2", "group2", t); }, DebugUIBuilder.Debug_PANE_RIGHT);
 
         DebugUIBuilder.instance.Show();
         inMenu = true;
@@ -35,16 +35,16 @@ public class DebugUISample : MonoBehaviour
 
     public void TogglePressed(Toggle t)
     {
-        Debug.Log("Toggle pressed. Is on? "+t.isOn);
+        //Debug.Log("Toggle pressed. Is on? "+t.isOn);
     }
     public void RadioPressed(string radioLabel, string group, Toggle t)
     {
-        Debug.Log("Radio value changed: "+radioLabel+", from group "+group+". New value: "+t.isOn);
+        //Debug.Log("Radio value changed: "+radioLabel+", from group "+group+". New value: "+t.isOn);
     }
 
     public void SliderPressed(float f)
     {
-        Debug.Log("Slider: " + f);
+        //Debug.Log("Slider: " + f);
         sliderText.text = f.ToString();
     }
 
@@ -60,6 +60,6 @@ public class DebugUISample : MonoBehaviour
 
     void LogButtonPressed()
     {
-        Debug.Log("Button pressed");
+        //Debug.Log("Button pressed");
     }
 }

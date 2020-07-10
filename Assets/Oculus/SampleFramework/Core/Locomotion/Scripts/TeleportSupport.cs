@@ -44,10 +44,10 @@ public abstract class TeleportSupport : MonoBehaviour
 		LocomotionTeleport = null;
 	}
 
-	[System.Diagnostics.Conditional("DEBUG_TELEPORT_EVENT_HANDLERS")]
+	[System.Diagnostics.Conditional("Debug_TELEPORT_EVENT_HANDLERS")]
 	void LogEventHandler(string msg)
 	{
-		Debug.Log("EventHandler: " + GetType().Name + ": " + msg);
+		//Debug.Log("EventHandler: " + GetType().Name + ": " + msg);
 	}
 
 	/// <summary>

@@ -45,11 +45,11 @@ namespace Oculus.Platform
         var message = CAPI.ovr_Message_GetString(c_message);
         if (message != null)
         {
-          Debug.Log(message);
+          //Debug.Log(message);
         }
         else
         {
-          Debug.Log(string.Format("null message string {0}", c_message));
+          //Debug.Log(string.Format("null message string {0}", c_message));
         }
       }
     }

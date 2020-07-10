@@ -92,7 +92,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 
 		void PeerConnectRequestCallback(Message<NetworkingPeer> msg)
 		{
-			Debug.LogFormat("Connection request from {0}, authorized is {1}", msg.Data.ID, m_remoteID);
+			//Debug.LogFormat("Connection request from {0}, authorized is {1}", msg.Data.ID, m_remoteID);
 
 			if (msg.Data.ID == m_remoteID)
 			{
@@ -102,7 +102,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 
 		void ConnectionStateChangedCallback(Message<NetworkingPeer> msg)
 		{
-			Debug.LogFormat("Connection state to {0} changed to {1}", msg.Data.ID, msg.Data.State);
+			//Debug.LogFormat("Connection state to {0} changed to {1}", msg.Data.ID, msg.Data.State);
 
 			if (msg.Data.ID == m_remoteID)
 			{
@@ -169,7 +169,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 			{
 				if (packet.Size != PACKET_SIZE)
 				{
-					Debug.Log("Invalid packet size: " + packet.Size);
+					//Debug.Log("Invalid packet size: " + packet.Size);
 					continue;
 				}
 
@@ -177,7 +177,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 
 				if (receiveTransformBuffer[0] != PACKET_FORMAT)
 				{
-					Debug.Log("Invalid packet type: " + packet.Size);
+					//Debug.Log("Invalid packet type: " + packet.Size);
 					continue;
 				}
 				hasNewTransform = true;

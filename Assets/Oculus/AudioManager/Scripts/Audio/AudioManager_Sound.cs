@@ -66,8 +66,8 @@ public partial class AudioManager : MonoBehaviour {
 		int numBuffers = 4;
 		AudioSettings.GetDSPBufferSize( out bufferLength, out numBuffers );
 		if ( Application.isPlaying ) {
-			Debug.Log( "[AudioManager] Audio Sample Rate: " + AudioSettings.outputSampleRate );
-			Debug.Log( "[AudioManager] Audio Buffer Length: " + bufferLength + " Size: " + numBuffers );
+			//Debug.Log( "[AudioManager] Audio Sample Rate: " + AudioSettings.outputSampleRate );
+			//Debug.Log( "[AudioManager] Audio Buffer Length: " + bufferLength + " Size: " + numBuffers );
 		}
 
 		// find the audio listener for playing regular 2D sounds
@@ -147,7 +147,7 @@ public partial class AudioManager : MonoBehaviour {
 				playingEmitters.RemoveAtFast( i );
 				continue;
 			}
-			// debugging/profiling
+			// Debugging/profiling
 			if ( verboseLogging && showPlayingEmitterCount ) {
 				total++;
 				switch ( playingEmitters[i].priority ) {
@@ -205,7 +205,7 @@ public partial class AudioManager : MonoBehaviour {
 	*/
 	void OnPreSceneLoad() {
 		// move any attached sounds back to the sound emitters parent before changing levels so they don't get destroyed
-		Debug.Log( "[AudioManager] OnPreSceneLoad cleanup" );
+		//Debug.Log( "[AudioManager] OnPreSceneLoad cleanup" );
 		for ( int i = 0; i < soundEmitters.Length; i++ ) {
 			soundEmitters[i].Stop();
 			soundEmitters[i].ResetParent( soundEmitterParent.transform );
@@ -451,7 +451,7 @@ public partial class AudioManager : MonoBehaviour {
 		// check max playing sounds
 		if ( soundFX.ReachedGroupPlayLimit() ) {
 			if ( theAudioManager.verboseLogging ) {
-				Debug.Log( "[AudioManager] PlaySoundAt() with " + soundFX.name + " skipped due to group play limit" );
+				//Debug.Log( "[AudioManager] PlaySoundAt() with " + soundFX.name + " skipped due to group play limit" );
 			}
 			return -1;
 		}
@@ -521,7 +521,7 @@ public partial class AudioManager : MonoBehaviour {
 		audioSource.transform.position = position;
 
 		if ( theAudioManager.verboseLogging ) {
-			Debug.Log( "[AudioManager] PlaySoundAt() channel = " + idx + " soundFX = " + soundFX.name + " volume = " + emitter.volume + " Delay = " + delay + " time = " + Time.time + "\n" );
+			//Debug.Log( "[AudioManager] PlaySoundAt() channel = " + idx + " soundFX = " + soundFX.name + " volume = " + emitter.volume + " Delay = " + delay + " time = " + Time.time + "\n" );
 		}
 		
 		// play the sound
@@ -621,7 +621,7 @@ public partial class AudioManager : MonoBehaviour {
 		audioSource.transform.position = position;
 
 		if ( theAudioManager.verboseLogging ) {
-			Debug.Log( "[AudioManager] PlaySoundAt() channel = " + idx + " clip = " + clip.name + " volume = " + emitter.volume + " Delay = " + delay + " time = " + Time.time + "\n" );
+			//Debug.Log( "[AudioManager] PlaySoundAt() channel = " + idx + " clip = " + clip.name + " volume = " + emitter.volume + " Delay = " + delay + " time = " + Time.time + "\n" );
 		}
 
 		// play the sound
@@ -667,7 +667,7 @@ public partial class AudioManager : MonoBehaviour {
 			if ( parent.parent != null ) {
 				parentName = parent.parent.name + "/" + parentName;
 			}
-			Debug.Log( "[AudioManager] ATTACHING INDEX " + idx + " to " + parentName );
+			//Debug.Log( "[AudioManager] ATTACHING INDEX " + idx + " to " + parentName );
 		}
 		theAudioManager.soundEmitters[idx].ParentTo( parent );
 	}
@@ -679,7 +679,7 @@ public partial class AudioManager : MonoBehaviour {
 	*/
 	public static void DetachSoundFromParent( int idx )	{
 		if ( theAudioManager.verboseLogging ) {
-			Debug.Log( "[AudioManager] DETACHING INDEX " + idx );
+			//Debug.Log( "[AudioManager] DETACHING INDEX " + idx );
 		}
 		theAudioManager.soundEmitters[idx].DetachFromParent();
 	}
@@ -739,7 +739,7 @@ public partial class AudioManager : MonoBehaviour {
 		if ( mixerSnapshot == null || mixerSnapshot.snapshot == null ) {
 			Debug.LogError( "[AudioManager] ERROR setting empty mixer snapshot!" );
 		} else {
-			Debug.Log( "[AudioManager] Setting audio mixer snapshot: " + ( ( mixerSnapshot != null && mixerSnapshot.snapshot != null ) ? mixerSnapshot.snapshot.name : "None" ) + " Time: " + Time.time );
+			//Debug.Log( "[AudioManager] Setting audio mixer snapshot: " + ( ( mixerSnapshot != null && mixerSnapshot.snapshot != null ) ? mixerSnapshot.snapshot.name : "None" ) + " Time: " + Time.time );
 		}
 #endif
 		if ( theAudioManager != null ) {

@@ -15,7 +15,7 @@ public class BuildAssetPackages
 
 	public static void Build()
 	{
-		Debug.Log("Building Deliverables");
+		//Debug.Log("Building Deliverables");
 		ExportPackages();
 	}
 

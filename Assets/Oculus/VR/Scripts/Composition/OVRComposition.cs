@@ -52,7 +52,7 @@ public abstract class OVRComposition {
         }
         cameraInTrackingSpace = (cameraRig != null && cameraRig.trackingSpace != null);
         this.cameraRig = cameraRig;
-        Debug.Log(cameraRig == null ? "[OVRComposition] CameraRig not found" : "[OVRComposition] CameraRig found");
+        //Debug.Log(cameraRig == null ? "[OVRComposition] CameraRig not found" : "[OVRComposition] CameraRig found");
     }
 
     public OVRPose ComputeCameraWorldSpacePose(OVRPlugin.CameraExtrinsics extrinsics)
@@ -77,7 +77,7 @@ public abstract class OVRComposition {
 		{
 			if (usingLastAttachedNodePose)
 			{
-				Debug.Log("The camera attached node get tracked");
+				//Debug.Log("The camera attached node get tracked");
 				usingLastAttachedNodePose = false;
 			}
 			OVRPose attachedNodePose = OVRPlugin.GetNodePose(extrinsics.AttachedToNode, OVRPlugin.Step.Render).ToOVRPose();

@@ -69,7 +69,7 @@ public class TeleportOrientationHandlerHMD : TeleportOrientationHandler
 				{
 					local.Normalize();
 
-					// Some debug draw code to visualize what the math is doing.
+					// Some Debug draw code to visualize what the math is doing.
 
 					//OVRDebugDraw.AddCross(target, 0.2f, 0.01f, Color.yellow, 0.1f);
 					//OVRDebugDraw.AddCross(destination + new Vector3(local.x, 0, local.z), 0.2f, 0.01f, Color.blue, 0.1f);

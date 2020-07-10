@@ -47,7 +47,7 @@ namespace Oculus.Platform.Samples.EntitlementCheck
     {
       if (result) // User passed entitlement check
       {
-        Debug.Log("Oculus user entitlement check successful.");
+        //Debug.Log("Oculus user entitlement check successful.");
 
         try
         {

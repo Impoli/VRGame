@@ -49,7 +49,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
     [Tooltip("Show viseme scores in an OVRLipSyncDebugConsole display.")]
     public bool showVisemes = false;
     [Tooltip("Key to toggle viseme score display.")]
-    public KeyCode debugVisemesKey = KeyCode.D;
+    public KeyCode DebugVisemesKey = KeyCode.D;
     [Tooltip("Skip data from the Audio Source. Use if you intend to pass audio data in manually.")]
     public bool skipAudioSource = false;
     [Tooltip("Adjust the linear audio gain multiplier before processing lipsync")]
@@ -57,7 +57,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
 
     private bool hasDebugConsole = false;
 
-    public KeyCode debugLaughterKey = KeyCode.H;
+    public KeyCode DebugLaughterKey = KeyCode.H;
     public bool showLaughter = false;
     public float laughterScore = 0.0f;
 
@@ -94,7 +94,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
         {
             ToggleAudioLoopback();
         }
-        else if (Input.GetKeyDown(debugVisemesKey))
+        else if (Input.GetKeyDown(DebugVisemesKey))
         {
             showVisemes = !showVisemes;
 
@@ -102,7 +102,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
             {
                 if (hasDebugConsole)
                 {
-                    Debug.Log("DEBUG SHOW VISEMES: ENABLED");
+                    //Debug.Log("Debug SHOW VISEMES: ENABLED");
                 }
                 else
                 {
@@ -116,10 +116,10 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
                 {
                     OVRLipSyncDebugConsole.Clear();
                 }
-                Debug.Log("DEBUG SHOW VISEMES: DISABLED");
+                //Debug.Log("Debug SHOW VISEMES: DISABLED");
             }
         }
-        else if (Input.GetKeyDown(debugLaughterKey))
+        else if (Input.GetKeyDown(DebugLaughterKey))
         {
             showLaughter = !showLaughter;
 
@@ -127,7 +127,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
             {
                 if (hasDebugConsole)
                 {
-                    Debug.Log("DEBUG SHOW LAUGHTER: ENABLED");
+                    //Debug.Log("Debug SHOW LAUGHTER: ENABLED");
                 }
                 else
                 {
@@ -141,7 +141,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
                 {
                     OVRLipSyncDebugConsole.Clear();
                 }
-                Debug.Log("DEBUG SHOW LAUGHTER: DISABLED");
+                //Debug.Log("Debug SHOW LAUGHTER: DISABLED");
             }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))

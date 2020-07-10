@@ -43,7 +43,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 
 			foreach (Product p in msg.GetProductList())
 			{
-				Debug.LogFormat("Product: sku:{0} name:{1} price:{2}", p.Sku, p.Name, p.FormattedPrice);
+				//Debug.LogFormat("Product: sku:{0} name:{1} price:{2}", p.Sku, p.Name, p.FormattedPrice);
 				if (p.Sku == CONSUMABLE_1)
 				{
 					m_priceText.text = p.FormattedPrice;
@@ -68,7 +68,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 
 			foreach (Purchase p in msg.GetPurchaseList())
 			{
-				Debug.LogFormat("Purchased: sku:{0} granttime:{1} id:{2}", p.Sku, p.GrantTime, p.ID);
+				//Debug.LogFormat("Purchased: sku:{0} granttime:{1} id:{2}", p.Sku, p.GrantTime, p.ID);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 			}
 
 			Purchase p = msg.GetPurchase();
-			Debug.Log("purchased " + p.Sku);
+			//Debug.Log("purchased " + p.Sku);
 			m_gameController.AddPowerballs(3);
 		}
 	}

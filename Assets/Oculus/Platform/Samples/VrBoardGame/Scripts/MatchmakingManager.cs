@@ -65,7 +65,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 					// heard from them in a while, check the datastore just-in-case
 					if (POLL_FREQUENCY < (Time.time - m_lastUpdateTime))
 					{
-						Debug.Log("Polling Room");
+						//Debug.Log("Polling Room");
 						m_lastUpdateTime = Time.time;
 						Rooms.Get(m_matchRoom).OnComplete(MatchmakingRoomUpdateCallback);
 					}
@@ -177,7 +177,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		{
 			if (untyped_msg.IsError)
 			{
-				Debug.Log(untyped_msg.GetError().Message);
+				//Debug.Log(untyped_msg.GetError().Message);
 				TransitionToState(MatchRoomState.None);
 				return;
 			}
@@ -197,7 +197,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		{
 			if (msg.IsError)
 			{
-				Debug.Log(msg.GetError().Message);
+				//Debug.Log(msg.GetError().Message);
 				TransitionToState(MatchRoomState.None);
 				return;
 			}
@@ -219,7 +219,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		{
 			if (msg.IsError)
 			{
-				Debug.Log(msg.GetError().Message);
+				//Debug.Log(msg.GetError().Message);
 				TransitionToState(MatchRoomState.None);
 				return;
 			}
@@ -231,7 +231,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 			}
 
 			int numUsers = (msg.Data.UsersOptional != null) ? msg.Data.UsersOptional.Count : 0;
-			Debug.Log ("Match room joined: " + m_matchRoom + " count: " + numUsers);
+			//Debug.Log ("Match room joined: " + m_matchRoom + " count: " + numUsers);
 
 			TransitionToState(MatchRoomState.Configuring);
 
@@ -250,7 +250,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		{
 			if (msg.IsError)
 			{
-				Debug.Log(msg.GetError().Message);
+				//Debug.Log(msg.GetError().Message);
 				TransitionToState(MatchRoomState.None);
 				return;
 			}
@@ -258,18 +258,18 @@ namespace Oculus.Platform.Samples.VrBoardGame
 			string ownerOculusID = msg.Data.OwnerOptional != null ? msg.Data.OwnerOptional.OculusID : "";
 			int numUsers = (msg.Data.UsersOptional != null) ? msg.Data.UsersOptional.Count : 0;
 
-			Debug.LogFormat(
-				"Room Update {0}\n" +
-				"  Owner {1}\n" +
-				"  User Count {2}\n" +
-				"  Datastore Count {3}\n",
-				msg.Data.ID, ownerOculusID, numUsers, msg.Data.DataStore.Count);
+			//Debug.LogFormat(
+				//"Room Update {0}\n" +
+				//"  Owner {1}\n" +
+				//"  User Count {2}\n" +
+				//"  Datastore Count {3}\n",
+				//msg.Data.ID, ownerOculusID, numUsers, msg.Data.DataStore.Count);
 
 			// check to make sure the room is valid as there are a few odd timing issues (for
 			// example when leaving a room) that can trigger an uninteresting update
 			if (msg.Data.ID != m_matchRoom)
 			{
-				Debug.Log("Unexpected room update from: " + msg.Data.ID);
+				//Debug.Log("Unexpected room update from: " + msg.Data.ID);
 				return;
 			}
 
@@ -289,7 +289,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 					{
 						if (PlatformManager.MyID != user.ID)
 						{
-							Debug.Log("Found remote user: " + user.OculusID);
+							//Debug.Log("Found remote user: " + user.OculusID);
 							m_remotePlayer = user;
 							break;
 						}
@@ -326,14 +326,14 @@ namespace Oculus.Platform.Samples.VrBoardGame
 
 			if (room.UsersOptional == null || (room.UsersOptional != null && room.UsersOptional.Count != 2))
 			{
-				Debug.Log("Other user quit the room");
+				//Debug.Log("Other user quit the room");
 				m_gameController.RemoteMatchEnded();
 			}
 		}
 
 		private void ProcessRemoteMove(string moveString)
 		{
-			Debug.Log("Processing remote move string: " + moveString);
+			//Debug.Log("Processing remote move string: " + moveString);
 			string[] tokens = moveString.Split(':');
 
 			GamePiece.Piece piece = (GamePiece.Piece)Enum.Parse(typeof(GamePiece.Piece), tokens[0]);
@@ -350,7 +350,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		public void SendLocalMove(GamePiece.Piece piece, int boardX, int boardY)
 		{
 			string moveString = string.Format("{0}:{1}:{2}", piece.ToString(), boardX, boardY);
-			Debug.Log("Sending move: " + moveString);
+			//Debug.Log("Sending move: " + moveString);
 
 			var dict = new Dictionary<string, string>();
 			dict[PlatformManager.MyOculusID] = moveString;
@@ -391,7 +391,7 @@ namespace Oculus.Platform.Samples.VrBoardGame
 		{
 			if (msg.IsError)
 			{
-				Debug.Log(msg.GetError().Message);
+				//Debug.Log(msg.GetError().Message);
 				TransitionToState(MatchRoomState.None);
 				return;
 			}

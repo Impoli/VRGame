@@ -7,8 +7,8 @@ language governing permissions and limitations under the license.
 
 ************************************************************************************/
 
-// Enable DEBUG_TELEPORT_STATES to cause messages to be logged when teleport state changes occur.
-//#define DEBUG_TELEPORT_STATES
+// Enable Debug_TELEPORT_STATES to cause messages to be logged when teleport state changes occur.
+//#define Debug_TELEPORT_STATES
 
 using System;
 using UnityEngine;
@@ -346,13 +346,13 @@ public class LocomotionTeleport : MonoBehaviour
 
 
 	/// <summary>
-	/// Internal logging function that is conditionally enabled via DEBUG_TELEPORT_STATES
+	/// Internal logging function that is conditionally enabled via Debug_TELEPORT_STATES
 	/// </summary>
 	/// <param name="msg"></param>
-	[Conditional("DEBUG_TELEPORT_STATES")]
+	[Conditional("Debug_TELEPORT_STATES")]
 	protected void LogState(string msg)
 	{
-		Debug.Log(Time.frameCount + ": " +  msg);
+		//Debug.Log(Time.frameCount + ": " +  msg);
 	}
 
 	/// <summary>
@@ -779,7 +779,7 @@ public class LocomotionTeleport : MonoBehaviour
 #if false
 		Quaternion destRotation = destTransform.rotation;
 
-		//Debug.Log("Rots: " + destRotation + " " + destTransform.rotation * Quaternion.Euler(0, -LocomotionController.CameraRig.trackingSpace.localEulerAngles.y, 0));
+		////Debug.Log("Rots: " + destRotation + " " + destTransform.rotation * Quaternion.Euler(0, -LocomotionController.CameraRig.trackingSpace.localEulerAngles.y, 0));
 
 		destRotation = destRotation * Quaternion.Euler(0, -LocomotionController.CameraRig.trackingSpace.localEulerAngles.y, 0);
 #endif

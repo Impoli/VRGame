@@ -64,7 +64,7 @@ public class PointDetection : MonoBehaviour
         //    //{
         //    //    points += other.GetComponent<BlockPoints>().Points;
         //    //    GameManager.Instance.setPoints(points);
-        //    //    Debug.Log("count: " + other.name);
+        //    //    //Debug.Log("count: " + other.name);
         //    //    //GameObject pt = GameObject.Find("PointsText");
         //    //    //pt.GetComponent<UnityEngine.UI.Text>().text = "Points: " + points;
         //    //}

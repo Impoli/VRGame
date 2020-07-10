@@ -315,7 +315,7 @@ public class OVROverlay : MonoBehaviour
 				externalSurfaceObject = OVRPlugin.GetLayerAndroidSurfaceObject(layerId);
 				if (externalSurfaceObject != System.IntPtr.Zero)
 				{
-					Debug.LogFormat("GetLayerAndroidSurfaceObject returns {0}", externalSurfaceObject);
+					//Debug.LogFormat("GetLayerAndroidSurfaceObject returns {0}", externalSurfaceObject);
 					if (externalSurfaceObjectCreated != null)
 					{
 						externalSurfaceObjectCreated();
@@ -777,7 +777,7 @@ public class OVROverlay : MonoBehaviour
 
 	void Awake()
 	{
-		Debug.Log("Overlay Awake");
+		//Debug.Log("Overlay Awake");
 
 		if (tex2DMaterial == null)
 			tex2DMaterial = new Material(Shader.Find("Oculus/Texture2D Blit"));

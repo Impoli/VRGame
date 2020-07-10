@@ -19,8 +19,8 @@ namespace Oculus.Platform
     }
 
     // If LogMessages is true, then the contents of each request response
-    // will be printed using Debug.Log. This allocates a lot of heap memory,
-    // and so should not be called outside of testing and debugging.
+    // will be printed using //Debug.Log. This allocates a lot of heap memory,
+    // and so should not be called outside of testing and Debugging.
     public static bool LogMessages = false;
 
     internal static void ForceInitialized()
@@ -87,7 +87,7 @@ namespace Oculus.Platform
       }
 
       if (LogMessages) {
-        Debug.LogWarning("Oculus.Platform.Core.LogMessages is set to true. This will cause extra heap allocations, and should not be used outside of testing and debugging.");
+        Debug.LogWarning("Oculus.Platform.Core.LogMessages is set to true. This will cause extra heap allocations, and should not be used outside of testing and Debugging.");
       }
 
       // Create the GameObject that will run the callbacks
@@ -123,7 +123,7 @@ namespace Oculus.Platform
       }
 
       if (LogMessages) {
-        Debug.LogWarning("Oculus.Platform.Core.LogMessages is set to true. This will cause extra heap allocations, and should not be used outside of testing and debugging.");
+        Debug.LogWarning("Oculus.Platform.Core.LogMessages is set to true. This will cause extra heap allocations, and should not be used outside of testing and Debugging.");
       }
 
       // Create the GameObject that will run the callbacks
@@ -1559,7 +1559,7 @@ namespace Oculus.Platform
 
     /// Modes: QUICKMATCH, BROWSE
     ///
-    /// Used to debug the state of the current matchmaking pool queue. This is not
+    /// Used to Debug the state of the current matchmaking pool queue. This is not
     /// intended to be used in production.
     ///
     public static Request<Models.MatchmakingAdminSnapshot> GetAdminSnapshot()

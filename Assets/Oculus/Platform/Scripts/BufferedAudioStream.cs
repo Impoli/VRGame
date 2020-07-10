@@ -35,7 +35,7 @@ public class BufferedAudioStream {
     if(remainingBufferTime > 0)
     {
 #if VERBOSE_LOGGING
-      Debug.Log(string.Format("current time: {0}, remainingBufferTime: {1}", Time.time, remainingBufferTime));
+      //Debug.Log(string.Format("current time: {0}, remainingBufferTime: {1}", Time.time, remainingBufferTime));
 #endif
 
       if (!audio.isPlaying && remainingBufferTime > playbackDelayTimeSeconds)
@@ -44,7 +44,7 @@ public class BufferedAudioStream {
         if (playbackDelayRemaining <= 0)
         {
 #if VERBOSE_LOGGING
-          Debug.Log("Starting playback");
+          //Debug.Log("Starting playback");
 #endif
           audio.Play();
         }
@@ -64,7 +64,7 @@ public class BufferedAudioStream {
     {
       if (audio.isPlaying)
       {
-        Debug.Log("Buffer empty, stopping " + DateTime.Now);
+        //Debug.Log("Buffer empty, stopping " + DateTime.Now);
         Stop();
       }
       else
@@ -117,7 +117,7 @@ public class BufferedAudioStream {
 #endif
     remainingBufferTime += (float)samples.Length / sampleRate;
 #if VERBOSE_LOGGING
-    Debug.Log(string.Format("previous remaining: {0}, new remaining: {1}, added {2} samples", prev, remainingBufferTime, samples.Length));
+    //Debug.Log(string.Format("previous remaining: {0}, new remaining: {1}, added {2} samples", prev, remainingBufferTime, samples.Length));
 #endif
     audio.clip.SetData(audioBuffer, 0);
   }

@@ -197,7 +197,7 @@ public class ONSPAudioSource : MonoBehaviour
 
         String readOnly = System.String.Format
         ("Read only values: refl enabled: {0:F0} num voices: {1:F0}", rfl_enabled, num_voices);
-        Debug.Log(readOnly);
+        //Debug.Log(readOnly);
 #endif
 
         // Check to see if we should disable spatializion

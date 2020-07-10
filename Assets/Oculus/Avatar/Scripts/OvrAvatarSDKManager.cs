@@ -24,8 +24,8 @@ public class OvrAvatarSDKManager : MonoBehaviour
     private float lastDispatchedAvatarSpecRequestTime = 0f;
     private const float AVATAR_SPEC_REQUEST_TIMEOUT = 5f;
 
-#if AVATAR_DEBUG
-    private ovrAvatarDebugContext debugContext = ovrAvatarDebugContext.None;
+#if AVATAR_Debug
+    private ovrAvatarDebugContext DebugContext = ovrAvatarDebugContext.None;
 #endif
 
     public struct AvatarSpecRequestParams
@@ -111,8 +111,8 @@ public class OvrAvatarSDKManager : MonoBehaviour
 
         CAPI.ovrAvatar_SetLoggingLevel(LoggingLevel);
         CAPI.ovrAvatar_RegisterLoggingCallback(CAPI.LoggingCallback);
-#if AVATAR_DEBUG
-        CAPI.ovrAvatar_SetDebugDrawContext((uint)debugContext);
+#if AVATAR_Debug
+        CAPI.ovrAvatar_SetDebugDrawContext((uint)DebugContext);
 #endif
 
         return true;
@@ -131,7 +131,7 @@ public class OvrAvatarSDKManager : MonoBehaviour
 	    {
 	        return;
 	    }
-#if AVATAR_DEBUG
+#if AVATAR_Debug
         // Call before ovrAvatarMessage_Pop which flushes the state
         CAPI.ovrAvatar_DrawDebugLines();
 #endif

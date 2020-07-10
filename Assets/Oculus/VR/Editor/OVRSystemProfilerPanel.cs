@@ -680,7 +680,7 @@ public class OVRSystemProfilerPanel : EditorWindow {
 #if UNITY_2017_1_OR_NEWER
 	void OnApplicationPlayModeStateChanged(PlayModeStateChange change)
 	{
-		Debug.LogFormat("[OVRSystemPerfMetricsWindow] OnApplicationPlayModeStateChanged {0}", change.ToString());
+		//Debug.LogFormat("[OVRSystemPerfMetricsWindow] OnApplicationPlayModeStateChanged {0}", change.ToString());
 		if (change == PlayModeStateChange.ExitingPlayMode)
 		{
 			tcpClient.Disconnect();

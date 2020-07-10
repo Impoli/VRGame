@@ -50,7 +50,7 @@ namespace Oculus.Platform
 
         if (rawMicSamples != null && rawMicSamples.Length > 5 * 1024)
         {
-          Debug.Log(string.Format("Giant input mic data {0}", rawMicSamples.Length));
+          //Debug.Log(string.Format("Giant input mic data {0}", rawMicSamples.Length));
           return;
         }
 

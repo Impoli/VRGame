@@ -123,7 +123,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 		// sense if the user is disconnected.
 		public static void TerminateWithError(Message msg)
 		{
-			Debug.Log("Error: " + msg.GetError().Message);
+			//Debug.Log("Error: " + msg.GetError().Message);
 			UnityEngine.Application.Quit();
 		}
 
@@ -226,7 +226,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 
 		public static void TransitionToState(State newState)
 		{
-			Debug.LogFormat("State {0} -> {1}", s_instance.m_currentState, newState);
+			//Debug.LogFormat("State {0} -> {1}", s_instance.m_currentState, newState);
 
 			if (s_instance && s_instance.m_currentState != newState)
 			{

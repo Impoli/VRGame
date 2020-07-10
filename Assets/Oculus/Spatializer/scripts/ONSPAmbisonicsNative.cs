@@ -65,7 +65,7 @@ public class ONSPAmbisonicsNative : MonoBehaviour
 	{
 // Unity 4 is deprecated; UNITY_5 still valid with plug-in
 #if UNITY_5
-        Debug.Log("Ambisonic ERROR: Ambisonic support in Unity 2017 or higher");
+        //Debug.Log("Ambisonic ERROR: Ambisonic support in Unity 2017 or higher");
 #else
 
         AudioSource source = GetComponent<AudioSource>();
@@ -74,25 +74,25 @@ public class ONSPAmbisonicsNative : MonoBehaviour
 
         if (source == null)
 		{
-			Debug.Log("Ambisonic ERROR: AudioSource does not exist.");
+			//Debug.Log("Ambisonic ERROR: AudioSource does not exist.");
 		}
 		else
 		{
 			if(source.spatialize == true)
             {
-                Debug.Log("Ambisonic WARNING: Turning spatialize field off for Ambisonic sources.");
+                //Debug.Log("Ambisonic WARNING: Turning spatialize field off for Ambisonic sources.");
                 source.spatialize = false;
             }
 
             if (source.clip == null)
 			{
-				Debug.Log("Ambisonic ERROR: AudioSource does not contain an audio clip.");
+				//Debug.Log("Ambisonic ERROR: AudioSource does not contain an audio clip.");
 			}
 			else
 			{
 				if(source.clip.channels != numFOAChannels)
 				{
-					Debug.Log("Ambisonic ERROR: AudioSource clip does not have correct number of channels.");
+					//Debug.Log("Ambisonic ERROR: AudioSource clip does not have correct number of channels.");
 				}
 			}
 		}
@@ -134,23 +134,23 @@ public class ONSPAmbisonicsNative : MonoBehaviour
             switch(status)
             {
                 case (ovrAmbisonicsNativeStatus.NotEnabled):
-                    Debug.Log("Ambisonic Native: Ambisonic not enabled on clip. Check clip field and turn it on");
+                    //Debug.Log("Ambisonic Native: Ambisonic not enabled on clip. Check clip field and turn it on");
                     break;
 
                 case (ovrAmbisonicsNativeStatus.Uninitialized):
-                    Debug.Log("Ambisonic Native: Stream uninitialized");
+                    //Debug.Log("Ambisonic Native: Stream uninitialized");
                     break;
 
                 case (ovrAmbisonicsNativeStatus.Success):
-                    Debug.Log("Ambisonic Native: Stream successfully initialized and playing/playable");
+                    //Debug.Log("Ambisonic Native: Stream successfully initialized and playing/playable");
                     break;
 
                 case (ovrAmbisonicsNativeStatus.StreamError):
-                    Debug.Log("Ambisonic Native WARNING: Stream error (bad input format?)");
+                    //Debug.Log("Ambisonic Native WARNING: Stream error (bad input format?)");
                     break;
 
                 case (ovrAmbisonicsNativeStatus.ProcessError):
-                    Debug.Log("Ambisonic Native WARNING: Stream process error (check default speaker setup)");
+                    //Debug.Log("Ambisonic Native WARNING: Stream process error (check default speaker setup)");
                     break;
 
                 default:

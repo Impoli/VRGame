@@ -29,11 +29,11 @@ public class VibrationHandler : MonoBehaviour
         {
             if (Parent.tag == "LeftHand")
             {
-                Debug.Log("Block Held in Left Hand");
+                //Debug.Log("Block Held in Left Hand");
             }
             if (Parent.tag == "RightHand")
             {
-                Debug.Log("Block Held in Right Hand");
+                //Debug.Log("Block Held in Right Hand");
             }
         }
     }
@@ -44,12 +44,12 @@ public class VibrationHandler : MonoBehaviour
         {
             if (Parent.tag == "LeftHand")
             {
-                Debug.Log("Block in Left Hand Collided");
+                //Debug.Log("Block in Left Hand Collided");
                 OVRInput.SetControllerVibration(0.1f, 0.1f, OVRInput.Controller.LTouch);
             }
             if (Parent.tag == "RightHand")
             {
-                Debug.Log("Block in Right Hand Collided");
+                //Debug.Log("Block in Right Hand Collided");
                 OVRInput.SetControllerVibration(0.1f, 0.1f, OVRInput.Controller.RTouch);
             }
             
@@ -61,12 +61,12 @@ public class VibrationHandler : MonoBehaviour
         {
             if (Parent.tag == "LeftHand")
             {
-                Debug.Log("Block in Left Hand Collided");
+                //Debug.Log("Block in Left Hand Collided");
                 OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
             }
             if (Parent.tag == "RightHand")
             {
-                Debug.Log("Block in Right Hand Collided");
+                //Debug.Log("Block in Right Hand Collided");
                 OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
             }
 

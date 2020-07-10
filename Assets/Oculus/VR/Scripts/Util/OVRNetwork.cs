@@ -96,7 +96,7 @@ public class OVRNetwork
 			try
 			{
 				tcpListener.Start();
-				Debug.LogFormat("TcpListener started. Local endpoint: {0}", tcpListener.LocalEndpoint.ToString());
+				//Debug.LogFormat("TcpListener started. Local endpoint: {0}", tcpListener.LocalEndpoint.ToString());
 			}
 			catch (SocketException e)
 			{
@@ -108,7 +108,7 @@ public class OVRNetwork
 
 			if (tcpListener != null)
 			{
-				Debug.LogFormat("[OVRNetworkTcpServer] Start Listening on port {0}", listeningPort);
+				//Debug.LogFormat("[OVRNetworkTcpServer] Start Listening on port {0}", listeningPort);
 
 				try
 				{
@@ -136,7 +136,7 @@ public class OVRNetwork
 			tcpListener.Stop();
 			tcpListener = null;
 
-			Debug.Log("[OVRNetworkTcpServer] Stopped listening");
+			////Debug.Log("[OVRNetworkTcpServer] Stopped listening");
 		}
 
 		private void DoAcceptTcpClientCallback(IAsyncResult ar)
@@ -148,7 +148,7 @@ public class OVRNetwork
 				lock (clientsLock)
 				{
 					clients.Add(client);
-					Debug.Log("[OVRNetworkTcpServer] client added");
+					//Debug.Log("[OVRNetworkTcpServer] client added");
 				}
 
 				try
@@ -309,7 +309,7 @@ public class OVRNetwork
 			{
 				TcpClient client = ar.AsyncState as TcpClient;
 				client.EndConnect(ar);
-				Debug.LogFormat("[OVRNetworkTcpClient] connected to {0}", client.ToString());
+				//Debug.LogFormat("[OVRNetworkTcpClient] connected to {0}", client.ToString());
 			}
 			catch (Exception e)
 			{
@@ -331,7 +331,7 @@ public class OVRNetwork
 					Debug.LogWarning("[OVRNetworkTcpClient] readyReceiveDataEvent not signaled. data receiving timeout?");
 				}
 
-				Debug.Log("[OVRNetworkTcpClient] close tcpClient");
+				//Debug.Log("[OVRNetworkTcpClient] close tcpClient");
 				try
 				{
 					tcpClient.GetStream().Close();

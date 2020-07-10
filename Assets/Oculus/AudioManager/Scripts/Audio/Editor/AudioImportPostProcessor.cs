@@ -27,7 +27,7 @@ public class AudioImportPostProcessor : AssetPostprocessor {
 				foreach ( string asset in importedAssets ) {
 					if ( asset.ToLower() == path.ToLower() ) {
 						// in the event the audio manager is selected, deselect it first before reloading
-						Debug.Log( "[AudioManager] AudioManager prefab reloaded: " + path );
+						//Debug.Log( "[AudioManager] AudioManager prefab reloaded: " + path );
 						Selection.objects = new Object[0] { };
 						// unfortunately even saving the audio manager prefab will trigger this action
 						//string msg = "The Audio Manager was reloaded.  If you are going to be making modifications to the Audio Manager, ";

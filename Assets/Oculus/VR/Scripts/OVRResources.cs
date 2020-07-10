@@ -12,7 +12,7 @@ public class OVRResources : MonoBehaviour
 		{
 			if(resourceBundle == null)
 			{
-				Debug.Log("[OVRResources] Resource bundle was not loaded successfully");
+				//Debug.Log("[OVRResources] Resource bundle was not loaded successfully");
 				return null;
 			}
 
@@ -27,7 +27,7 @@ public class OVRResources : MonoBehaviour
 		{
 			if (resourceBundle == null)
 			{
-				Debug.Log("[OVRResources] Resource bundle was not loaded successfully");
+				//Debug.Log("[OVRResources] Resource bundle was not loaded successfully");
 				return null;
 			}
 

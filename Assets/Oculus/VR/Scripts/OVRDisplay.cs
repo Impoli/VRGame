@@ -122,7 +122,7 @@ public class OVRDisplay
 
 		if (recenterRequested && Time.frameCount > recenterRequestedFrameCount)
 		{
-			Debug.Log("Recenter event detected");
+			////Debug.Log("Recenter event detected");
 			if (RecenteredPose != null)
 			{
 				RecenteredPose();
@@ -137,7 +137,7 @@ public class OVRDisplay
 			int recenterCount = OVRPlugin.GetLocalTrackingSpaceRecenterCount();
 			if (localTrackingSpaceRecenterCount != recenterCount)
 			{
-				Debug.Log("Recenter event detected");
+				//Debug.Log("Recenter event detected");
 				if (RecenteredPose != null)
 				{
 					RecenteredPose();

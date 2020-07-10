@@ -62,7 +62,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 
 		void VoipConnectRequestCallback(Message<NetworkingPeer> msg)
 		{
-			Debug.LogFormat("Voip request from {0}, authorized is {1}", msg.Data.ID, m_remoteID);
+			//Debug.LogFormat("Voip request from {0}, authorized is {1}", msg.Data.ID, m_remoteID);
 
 			if (msg.Data.ID == m_remoteID)
 			{
@@ -72,7 +72,7 @@ namespace Oculus.Platform.Samples.VrVoiceChat
 
 		void VoipStateChangedCallback(Message<NetworkingPeer> msg)
 		{
-			Debug.LogFormat("Voip state to {0} changed to {1}", msg.Data.ID, msg.Data.State);
+			//Debug.LogFormat("Voip state to {0} changed to {1}", msg.Data.ID, msg.Data.State);
 
 			if (msg.Data.ID == m_remoteID)
 			{

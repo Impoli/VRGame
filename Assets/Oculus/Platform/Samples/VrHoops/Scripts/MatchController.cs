@@ -126,7 +126,7 @@ namespace Oculus.Platform.Samples.VrHoops
 
 		void TransitionToState(State newState)
 		{
-			Debug.LogFormat("MatchController State {0} -> {1}", m_currentState, newState);
+			//Debug.LogFormat("MatchController State {0} -> {1}", m_currentState, newState);
 
 			if (m_currentState != newState)
 			{
@@ -347,7 +347,7 @@ namespace Oculus.Platform.Samples.VrHoops
 
 		public void PlayOnlineOrCancel()
 		{
-			Debug.Log ("Play online or Cancel");
+			//Debug.Log ("Play online or Cancel");
 
 			if (m_currentState == State.NONE)
 			{
@@ -382,7 +382,7 @@ namespace Oculus.Platform.Samples.VrHoops
 				// if the remote start time is later use that, as long as it's not horribly wrong
 				if (remoteTime > MatchStartTime && (remoteTime - 60) < MatchStartTime)
 				{
-					Debug.Log("Moving Start time by " + (remoteTime - MatchStartTime));
+					//Debug.Log("Moving Start time by " + (remoteTime - MatchStartTime));
 					MatchStartTime = remoteTime;
 				}
 			}

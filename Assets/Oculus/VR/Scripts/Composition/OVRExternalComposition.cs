@@ -56,14 +56,14 @@ public class OVRExternalComposition : OVRComposition
 		renderCombinedFrame = true;
 		if (GraphicsSettings.renderPipelineAsset != null)
 		{
-			Debug.Log("[OVRExternalComposition] scriptable rendering pipeline detected, Camera.rect is not supported");
+			//Debug.Log("[OVRExternalComposition] scriptable rendering pipeline detected, Camera.rect is not supported");
 			renderCombinedFrame = false;
 		}
 
 		int frameWidth;
 		int frameHeight;
 		OVRPlugin.Media.GetMrcFrameSize(out frameWidth, out frameHeight);
-		Debug.LogFormat("[OVRExternalComposition] Create render texture {0}, {1}", renderCombinedFrame ? frameWidth : frameWidth/2, frameHeight);
+		//Debug.LogFormat("[OVRExternalComposition] Create render texture {0}, {1}", renderCombinedFrame ? frameWidth : frameWidth/2, frameHeight);
 		for (int i=0; i<2; ++i)
 		{
 			mrcRenderTextureArray[i] = new RenderTexture(renderCombinedFrame ? frameWidth : frameWidth/2, frameHeight, 24, RenderTextureFormat.ARGB32);
@@ -76,7 +76,7 @@ public class OVRExternalComposition : OVRComposition
 
 		if (!renderCombinedFrame)
 		{
-			Debug.LogFormat("[OVRExternalComposition] Create extra render textures for foreground");
+			//Debug.LogFormat("[OVRExternalComposition] Create extra render textures for foreground");
 			for (int i = 0; i < 2; ++i)
 			{
 				mrcForegroundRenderTextureArray[i] = new RenderTexture(frameWidth / 2, frameHeight, 24, RenderTextureFormat.ARGB32);
@@ -91,7 +91,7 @@ public class OVRExternalComposition : OVRComposition
 	{
 		if (mainCamera.gameObject != previousMainCameraObject)
 		{
-			Debug.LogFormat("[OVRExternalComposition] Camera refreshed. Rebind camera to {0}", mainCamera.gameObject.name);
+			//Debug.LogFormat("[OVRExternalComposition] Camera refreshed. Rebind camera to {0}", mainCamera.gameObject.name);
 
 			OVRCompositionUtil.SafeDestroy(ref backgroundCameraGameObject);
 			backgroundCamera = null;
@@ -202,7 +202,7 @@ public class OVRExternalComposition : OVRComposition
 			}
 			else
 			{
-				Debug.LogFormat("[OVRExternalComposition] AudioListener found, obj {0}", tmpAudioListener.gameObject.name);
+				//Debug.LogFormat("[OVRExternalComposition] AudioListener found, obj {0}", tmpAudioListener.gameObject.name);
 			}
 			audioListener = tmpAudioListener;
 			
@@ -210,7 +210,7 @@ public class OVRExternalComposition : OVRComposition
 			{
 				audioFilter = audioListener.gameObject.AddComponent<OVRMRAudioFilter>();
 				audioFilter.composition = this;
-				Debug.LogFormat("OVRMRAudioFilter added");
+				//Debug.LogFormat("OVRMRAudioFilter added");
 			}
 		}
 	}
@@ -224,7 +224,7 @@ public class OVRExternalComposition : OVRComposition
 		GetAndResetAudioData(ref cachedAudioDataArray, out audioFrames, out audioChannels);
 
 		int syncId = -1;
-		//Debug.Log("EncodeFrameThreadObject EncodeMrcFrame");
+		////Debug.Log("EncodeFrameThreadObject EncodeMrcFrame");
 		bool ret = false;
 		if (OVRPlugin.Media.GetMrcInputVideoBufferType() == OVRPlugin.Media.InputVideoBufferType.TextureHandle)
 		{
@@ -400,7 +400,7 @@ public class OVRExternalComposition : OVRComposition
 		{
 			audioFilter.composition = null;
 			Object.Destroy(audioFilter);
-			Debug.LogFormat("OVRMRAudioFilter destroyed");
+			//Debug.LogFormat("OVRMRAudioFilter destroyed");
 			audioFilter = null;
 		}
 
@@ -413,7 +413,7 @@ public class OVRExternalComposition : OVRComposition
 		backgroundCamera = null;
 		OVRCompositionUtil.SafeDestroy(ref foregroundCameraGameObject);
 		foregroundCamera = null;
-		Debug.Log("ExternalComposition deactivated");
+		//Debug.Log("ExternalComposition deactivated");
 
 #if OVR_ANDROID_MRC
 		if (lastMrcEncodeFrameSyncId != -1)
@@ -454,7 +454,7 @@ public class OVRExternalComposition : OVRComposition
 			}
 			cachedChannels = channels;
 			cachedAudioData.AddRange(data);
-			//Debug.LogFormat("[CacheAudioData] dspTime {0} indata {1} channels {2} accu_len {3}", AudioSettings.dspTime, data.Length, channels, cachedAudioData.Count);
+			////Debug.LogFormat("[CacheAudioData] dspTime {0} indata {1} channels {2} accu_len {3}", AudioSettings.dspTime, data.Length, channels, cachedAudioData.Count);
 		}
 	}
 
@@ -462,7 +462,7 @@ public class OVRExternalComposition : OVRComposition
 	{
 		lock(audioDataLock)
 		{
-			//Debug.LogFormat("[GetAndResetAudioData] dspTime {0} accu_len {1}", AudioSettings.dspTime, cachedAudioData.Count);
+			////Debug.LogFormat("[GetAndResetAudioData] dspTime {0} accu_len {1}", AudioSettings.dspTime, cachedAudioData.Count);
 			if (audioData == null || audioData.Length < cachedAudioData.Count)
 			{
 				audioData = new float[cachedAudioData.Capacity];

@@ -29,7 +29,7 @@ using System.Collections;
 /// platform that your camera is attached to. When the platform moves or rotates, the
 /// camera moves or rotates, but the camera can still move independently while "on" the
 /// platform.
-/// In general, this behavior should be disabled when not debugging.
+/// In general, this behavior should be disabled when not Debugging.
 /// </summary>
 public class OVRDebugHeadController : MonoBehaviour
 {

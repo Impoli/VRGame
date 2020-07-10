@@ -7,7 +7,7 @@ language governing permissions and limitations under the license.
 
 ************************************************************************************/
 
-#define DEBUG_LOCOMOTION_PANEL
+#define Debug_LOCOMOTION_PANEL
 
 using UnityEngine;
 using System.Collections;
@@ -63,10 +63,10 @@ public class LocomotionSampleSupport : MonoBehaviour
         }
     }
 
-    [Conditional("DEBUG_LOCOMOTION_PANEL")]
+    [Conditional("Debug_LOCOMOTION_PANEL")]
     static void Log(string msg)
     {
-        Debug.Log(msg);
+        //Debug.Log(msg);
     }
 
     /// <summary>

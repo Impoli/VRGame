@@ -19,7 +19,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ************************************************************************************/
-//#define ENABLE_DEBUG_EXPORT_OBJ
+//#define ENABLE_Debug_EXPORT_OBJ
 
 using UnityEngine;
 using UnityEditor;
@@ -80,10 +80,10 @@ public class ONSPPropagationGeometryEditor : Editor
 		
 		EditorGUILayout.EndHorizontal();
 
-#if ENABLE_DEBUG_EXPORT_OBJ
+#if ENABLE_Debug_EXPORT_OBJ
         // this allows you to export the geometry to a .obj for viewing
-        // in an external model viewer for debugging/validation
-        if ( GUILayout.Button("Write to .obj (debug)") )
+        // in an external model viewer for Debugging/validation
+        if ( GUILayout.Button("Write to .obj (Debug)") )
             mesh.WriteToObj();
 #endif
 

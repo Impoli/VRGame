@@ -86,7 +86,7 @@ class OVRScreenshotWizard : ScriptableWizard
 			}
 		}
 
-		Debug.Log( "Created path: " + currentPath );
+		//Debug.Log( "Created path: " + currentPath );
 		return true;
 	}
 
@@ -166,7 +166,7 @@ class OVRScreenshotWizard : ScriptableWizard
 
 			if ( ( saveMode == SaveMode.SaveUnityCubemap ) || ( saveMode == SaveMode.SaveBoth ) )
 			{
-				Debug.Log( "Saving: " + pathName );
+				//Debug.Log( "Saving: " + pathName );
 				// by default the unity cubemap isn't saved
 				AssetDatabase.CreateAsset( cubemap, pathName );
 				// reimport as necessary
@@ -191,7 +191,7 @@ class OVRScreenshotWizard : ScriptableWizard
 		string fullPath = EditorUtility.SaveFilePanel( string.Format( "Save Cubemap Screenshot as {0}", format ), "", pathName, format.ToLower() );
 		if ( !string.IsNullOrEmpty( fullPath ) )
 		{
-			Debug.Log( "Saving: " + fullPath );
+			//Debug.Log( "Saving: " + fullPath );
 			OVRCubemapCapture.SaveCubemapCapture(cubemap, fullPath);
 		}
 	}

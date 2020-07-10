@@ -172,7 +172,7 @@ public partial class AudioManager : MonoBehaviour {
 		}
 
 #if UNITY_EDITOR
-		Debug.Log( "[AudioManager] Initialized..." );
+		//Debug.Log( "[AudioManager] Initialized..." );
 #endif
 	}
 
@@ -233,7 +233,7 @@ public partial class AudioManager : MonoBehaviour {
 			theAudioManager.RebuildSoundFXCache();
 		}
 		if ( !theAudioManager.soundFXCache.ContainsKey( name ) ) {
-#if DEBUG_BUILD || UNITY_EDITOR
+#if Debug_BUILD || UNITY_EDITOR
 			Debug.LogError( "WARNING: Missing Sound FX in cache: " + name );
 #endif
 			return nullSound;
@@ -322,7 +322,7 @@ public partial class AudioManager : MonoBehaviour {
 	*/
 	static public void OnPrefabReimported() {
 		if ( theAudioManager != null ) {
-			Debug.Log( "[AudioManager] Reimporting the sound FX cache." );
+			//Debug.Log( "[AudioManager] Reimporting the sound FX cache." );
 			theAudioManager.RebuildSoundFXCache();
 		}
 	}
