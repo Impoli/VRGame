@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance = null;
 
-    public float tutorialTime = 3;
+    public float tutorialTime = 5;
     public bool tutorialEnded { get; private set; } = false;
     private float timeSum = 0;
 
@@ -61,6 +62,11 @@ public class GameManager : MonoBehaviour
             Player.SetActive(false);
             Player.transform.position = new Vector3(0f, Player.transform.position.y, 0f);
             Player.SetActive(true);
+        }
+        if (OVRInput.Get(OVRInput.Button.Three))
+        {
+            NewGame();
+            SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
         }
 
 
