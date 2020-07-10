@@ -26,8 +26,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.GameOver)
+        if (GameManager.Instance.GameOver )
+        {
             GameOverCanvas.SetActive(true);
+        }
+           
     }
 
     void newGame()

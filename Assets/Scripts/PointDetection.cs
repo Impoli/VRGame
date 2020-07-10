@@ -5,7 +5,7 @@ using UnityEngine;
 public class PointDetection : MonoBehaviour
 {
 
-    public float standTime = 0.0f;
+    private float standTime = 0.0f;
     private bool wallHasPassed = false;
     //private bool startPointDetection = false;
 
@@ -52,7 +52,7 @@ public class PointDetection : MonoBehaviour
     {
 
         // Point detection starts when wall has passed
-        if ( other.name == "WallPlane")
+        if ( other.tag == "WallPlane")
         {
             wallHasPassed = true;
             deltaSum = 0;

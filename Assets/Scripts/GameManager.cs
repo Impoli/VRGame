@@ -122,4 +122,10 @@ public class GameManager : MonoBehaviour
     {
         templateIsEnabled = enabled;
     }
+
+    public void setGameOver(bool _gameOver)
+    {
+        GameOver = _gameOver;
+    }
+
 }

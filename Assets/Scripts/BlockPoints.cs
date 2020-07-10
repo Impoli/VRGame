@@ -19,6 +19,7 @@ public class BlockPoints : MonoBehaviour
 
     private void Update()
     {
+
         if (inErrorPosition)
         {
             GetComponent<MeshRenderer>().material = errorMaterial;

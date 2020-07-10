@@ -44,6 +44,11 @@ public class WallPoints : MonoBehaviour
             gameObject.GetComponent<WallMovement>().enabled = false;
             transform.position += new Vector3(0, -1f * Time.deltaTime, 0);
 
+            if (GameManager.Instance.points < wallPoints)
+            {
+                GameManager.Instance.setGameOver(true);
+            }
+
             if (transform.position.y < -2.5)
             {
                 GameManager.Instance.setWallIsAlive(false);
