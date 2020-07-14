@@ -5,11 +5,14 @@ using UnityEngine;
 public class WallPoints : MonoBehaviour
 {
 
+    private AudioSource audioSource;
     public int wallPoints = 0;
     private GameObject refCube;
+    private float startDistanceToPodest = 0;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         GameManager.Instance.setWallPoints(wallPoints);
        
         for (int i = 0; i < gameObject.transform.childCount ; i++)
@@ -21,13 +24,15 @@ public class WallPoints : MonoBehaviour
         }
 
         transform.position += new Vector3(0, -2.5f, 0);
+        startDistanceToPodest = Mathf.Abs(GameObject.Find("Podest_schiene").transform.position.z - transform.position.z);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+        float currDistance = Mathf.Abs(GameObject.Find("Podest_schiene").transform.position.z - transform.position.z);
+        audioSource.volume = 1 - currDistance/ startDistanceToPodest;
 
         GameManager.Instance.setCurrentWallGapX(refCube.GetComponent<Renderer>().bounds.size.x);
 
