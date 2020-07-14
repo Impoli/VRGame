@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject GameOverCanvas;
     public Button RestartButton;
     public Button QuitButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
 
         btn = QuitButton.GetComponent<Button>();
         btn.onClick.AddListener(quitGame);
+
     }
 
     // Update is called once per frame
@@ -43,4 +45,5 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
 }
