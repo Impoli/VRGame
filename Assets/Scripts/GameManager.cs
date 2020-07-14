@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public int points { get; private set; } = 0;
     public int currentPoints { get; private set; } = 0;
+    public int Score { get; private set; } = 0;
     public bool wallIsAlive { get; private set; } = false;
     public int wallPoints { get; private set; } = 0;
     public float currentWallGapX { get; private set; } = 0;
@@ -23,12 +24,16 @@ public class GameManager : MonoBehaviour
     public bool GameOver { get; set; } = false;
     public bool templateIsEnabled { get; private set; } = false;
 
+    public string PlayerName { get; set; } = "Player 1";
+    public int MaxHighScores = 4;
+    public List<HighScore> HighScores = new List<HighScore>();
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            HighScores = IOManager.ReadSave();
             //DontDestroyOnLoad(gameObject);  // the Singelton Obj gets not deleted when change szene
         }
         else
@@ -40,9 +45,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject pt = GameObject.Find("PointsText");
-        pt.GetComponent<UnityEngine.UI.Text>().text = string.Format("Wall Points: {0} \nCurrent Points: {1} \n {2} ",wallPoints, currentPoints, points );
-
         timeSum += Time.deltaTime;
         if(timeSum >= tutorialTime)
         {
@@ -69,18 +71,19 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
         }
 
-
     }
 
     public static void NewGame()
     {
         GameManager.Instance.points = 0;
+        GameManager.Instance.Score = 0;
         GameManager.Instance.currentPoints = 0;
         GameManager.Instance.wallIsAlive = false;
         GameManager.Instance.wallPoints = 0;
         GameManager.Instance.currentWallGapX = 0;
         GameManager.Instance.GameOver = false;
         GameManager.Instance.templateIsEnabled = false;
+        GameManager.Instance.HighScores = IOManager.ReadSave();
 
     }
 
@@ -93,6 +96,7 @@ public class GameManager : MonoBehaviour
         } else
         {
             points = currentPoints;
+            Score += points;
         }
         
     }
@@ -128,4 +132,10 @@ public class GameManager : MonoBehaviour
         GameOver = _gameOver;
     }
 
+    public void SaveGame()
+    {
+        HighScores.Add(new HighScore(PlayerName, Score));
+        HighScores.Sort((a,b) => b.CompareTo(a));
+        IOManager.WriteSave(HighScores);
+    }
 }
