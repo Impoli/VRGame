@@ -26,6 +26,11 @@ public class TemplateHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.Instance.wallIsAlive)
+        {
+            Destroy(gameObject);
+        }
+
         timeSum += Time.deltaTime;
 
         if (!startTrigger.isStarted)
