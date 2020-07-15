@@ -7,11 +7,24 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public GameObject GameOverCanvas;
-    public Button RestartButton;
-    public Button QuitButton;
+
+    public Button ButtonRestart;
+    public Button ButtonQuit;
+
+    public Button ButtonUpOne;
+    public Button ButtonUpTwo;
+    public Button ButtonUpThree;
+    public Button ButtonDownOne;
+    public Button ButtonDownTwo;
+    public Button ButtonDownThree;
+
     public Text Score;
     public Text ScoreBoard;
     public Text HighscoreBoard;
+
+    public Text TextLetterOne;
+    public Text TextLetterTwo;
+    public Text TextLetterThree;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +33,29 @@ public class UIManager : MonoBehaviour
 
         Button btn;
 
-        btn = RestartButton.GetComponent<Button>();
+        btn = ButtonRestart.GetComponent<Button>();
         btn.onClick.AddListener(newGame);
 
-        btn = QuitButton.GetComponent<Button>();
+        btn = ButtonQuit.GetComponent<Button>();
         btn.onClick.AddListener(quitGame);
+
+        btn = ButtonUpOne.GetComponent<Button>();
+        btn.onClick.AddListener(incrementLetterOne);
+
+        btn = ButtonUpTwo.GetComponent<Button>();
+        btn.onClick.AddListener(incrementLetterTwo);
+
+        btn = ButtonUpThree.GetComponent<Button>();
+        btn.onClick.AddListener(incrementLetterThree);
+
+        btn = ButtonDownOne.GetComponent<Button>();
+        btn.onClick.AddListener(decrementLetterOne);
+
+        btn = ButtonDownTwo.GetComponent<Button>();
+        btn.onClick.AddListener(decrementLetterTwo);
+
+        btn = ButtonDownThree.GetComponent<Button>();
+        btn.onClick.AddListener(decrementLetterThree);
 
     }
 
@@ -59,4 +90,82 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    void incrementLetterOne()
+    {
+        int letterAscii = (int)TextLetterOne.text[0];
+        if (letterAscii == 32)
+            letterAscii = 65;
+        else if (letterAscii < 90)
+            letterAscii += 1;
+        else
+            letterAscii = 32;
+        char letter = (char)letterAscii;
+        TextLetterOne.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+    }
+    void incrementLetterTwo()
+    {
+        int letterAscii = (int)TextLetterTwo.text[0];
+        if (letterAscii == 32)
+            letterAscii = 65;
+        else if (letterAscii < 90)
+            letterAscii += 1;
+        else
+            letterAscii = 32;
+        char letter = (char)letterAscii;
+        TextLetterTwo.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+    }
+    void incrementLetterThree()
+    {
+        int letterAscii = (int)TextLetterThree.text[0];
+        if (letterAscii == 32)
+            letterAscii = 65;
+        else if (letterAscii < 90)
+            letterAscii += 1;
+        else
+            letterAscii = 32;
+        char letter = (char)letterAscii;
+        TextLetterThree.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+    }
+    void decrementLetterOne()
+    {
+        int letterAscii = (int)TextLetterOne.text[0];
+        if (letterAscii == 32)
+            letterAscii = 90;
+        else if (letterAscii > 65)
+            letterAscii -= 1;
+        else
+            letterAscii = 32;
+        char letter = (char)letterAscii;
+        TextLetterOne.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+    }
+    void decrementLetterTwo()
+    {
+        int letterAscii = (int)TextLetterTwo.text[0];
+        if (letterAscii == 32)
+            letterAscii = 90;
+        else if (letterAscii > 65)
+            letterAscii -= 1;
+        else
+            letterAscii = 32;
+        char letter = (char)letterAscii;
+        TextLetterTwo.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+    }
+    void decrementLetterThree()
+    {
+        int letterAscii = (int)TextLetterThree.text[0];
+        if (letterAscii == 32)
+            letterAscii = 90;
+        else if (letterAscii > 65)
+            letterAscii -= 1;
+        else
+            letterAscii = 32;
+        char letter = (char)letterAscii;
+        TextLetterThree.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+    }
 }

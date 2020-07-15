@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public bool GameOver { get; set; } = false;
     public bool templateIsEnabled { get; private set; } = false;
 
-    public string PlayerName { get; set; } = "Player 1";
+    public string PlayerName { get; set; } = "p1 ";
     public int MaxHighScores = 4;
     public List<HighScore> HighScores = new List<HighScore>();
 
