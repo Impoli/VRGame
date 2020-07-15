@@ -15,8 +15,12 @@ public class GameManager : MonoBehaviour
     public int points { get; private set; } = 0;
     public int currentPoints { get; private set; } = 0;
     public int Score { get; private set; } = 0;
+
     public bool wallIsAlive { get; private set; } = false;
     public int wallPoints { get; private set; } = 0;
+    public float wallSpeedNormal { get; set; } = 0.5f;
+    public float wallSpeedFast { get; set; } = 2f;
+
     public float currentWallGapX { get; private set; } = 0;
     public GameObject RightHand;
     public GameObject LeftHand;
@@ -84,7 +88,8 @@ public class GameManager : MonoBehaviour
         GameManager.Instance.GameOver = false;
         GameManager.Instance.templateIsEnabled = false;
         GameManager.Instance.HighScores = IOManager.ReadSave();
-
+        GameManager.Instance.wallSpeedNormal = 0.5f;
+        GameManager.Instance.wallSpeedFast = 2f;
     }
 
     public void setPoints(bool reset)
@@ -97,6 +102,8 @@ public class GameManager : MonoBehaviour
         {
             points = currentPoints;
             Score += points;
+            wallSpeedNormal += 0.1f;
+            wallSpeedFast += 0.2f;
         }
         
     }

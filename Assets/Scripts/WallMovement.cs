@@ -7,6 +7,8 @@ public class WallMovement : MonoBehaviour
 {
     private Transform podest;
     private bool wallPassedPodestRef = false;
+    private float speedNormal;
+    private float speedFast;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,10 @@ public class WallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+
+        speedNormal = GameManager.Instance.wallSpeedNormal;
+        speedFast = GameManager.Instance.wallSpeedFast;
+
         if((podest.position.z + 1) > transform.position.z)
         {
             wallPassedPodestRef = true;
@@ -32,11 +37,11 @@ public class WallMovement : MonoBehaviour
 
         if(((OVRInput.Get(OVRInput.Button.One)) || Input.GetKey(KeyCode.A ) || GameManager.Instance.templateIsEnabled) && !wallPassedPodestRef )
         {
-            transform.position += new Vector3(0, 0, -2.0f * Time.deltaTime);
+            transform.position += new Vector3(0, 0, -speedFast * Time.deltaTime);
         }
         else
         {
-            transform.position += new Vector3(0, 0, -0.25f * Time.deltaTime);
+            transform.position += new Vector3(0, 0, -speedNormal * Time.deltaTime);
         }
       
     }
