@@ -28,8 +28,9 @@ public class UIManager : MonoBehaviour
     public Button ButtonGameOverRestart;
     public Button ButtonGameOverExit;
 
-    public TextMeshProUGUI TextScoreboardRequierd;
-    public TextMeshProUGUI TextScoreboardCurrent;
+    public Text TextScoreboardRequierd;
+    public Text TextScoreboardCurrent;
+    public Text TextScoreboardScore;
 
     public Text TextGameOverScore;
     public Text TextGameOverLeaderboard;
@@ -101,8 +102,9 @@ public class UIManager : MonoBehaviour
         }
         TextScoreboardRequierd.text = GameManager.Instance.wallPoints.ToString();
         TextScoreboardCurrent.text = GameManager.Instance.currentPoints.ToString();
-        
-        foreach(HighScore high in GameManager.Instance.HighScores)
+        TextScoreboardScore.text = GameManager.Instance.Score.ToString();
+
+        foreach (HighScore high in GameManager.Instance.HighScores)
         {
             TextGameOverLeaderboard.text = TextGameOverLeaderboard.text + "\n" + high.playerName + ": " + high.playerScore;
         }
