@@ -82,6 +82,8 @@ public class UIManager : MonoBehaviour
 
         btn = ButtonGameOverRestart.GetComponent<Button>();
         btn.onClick.AddListener(newGame);
+
+        newGame();
     }
 
     // Update is called once per frame
