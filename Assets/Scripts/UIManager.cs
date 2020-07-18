@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject GameOver;
     public GameObject MainMenu;
     public GameObject Intro;
+    public GameObject clipboard;
 
 
     public Button ButtonMainStart;
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
         GameOver.SetActive(false);
         MainMenu.SetActive(true);
         Intro.SetActive(false);
+        clipboard.SetActive(true);
 
 
         Button btn;
@@ -82,8 +84,6 @@ public class UIManager : MonoBehaviour
 
         btn = ButtonGameOverRestart.GetComponent<Button>();
         btn.onClick.AddListener(newGame);
-
-        newGame();
     }
 
     // Update is called once per frame
@@ -93,6 +93,7 @@ public class UIManager : MonoBehaviour
         {
             TextGameOverScore.text = GameManager.Instance.Score.ToString();
             GameOver.SetActive(true);
+            clipboard.SetActive(true);
         }
         else
         {
@@ -125,6 +126,7 @@ public class UIManager : MonoBehaviour
         GameOver.SetActive(false);
         Intro.SetActive(false);
         MainMenu.SetActive(false);
+        clipboard.SetActive(false);
         GameManager.Instance.SaveGame();
         GameManager.NewGame();
         //SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
