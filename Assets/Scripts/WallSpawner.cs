@@ -23,7 +23,7 @@ public class WallSpawner : MonoBehaviour
     void Update()
     {
         
-        if (!GameManager.Instance.wallIsAlive && GameManager.Instance.tutorialEnded && !GameManager.Instance.GameOver)
+        if (!GameManager.Instance.wallIsAlive && GameManager.Instance.GameStarted && !GameManager.Instance.GameOver)
         {
             timeSume += Time.deltaTime;
             if (timeSume >= 0.5)

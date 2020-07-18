@@ -1,87 +1,131 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject GameOverCanvas;
+    public GameObject GameOver;
+    public GameObject MainMenu;
+    public GameObject Intro;
 
-    public Button ButtonRestart;
-    public Button ButtonQuit;
 
-    public Button ButtonUpOne;
-    public Button ButtonUpTwo;
-    public Button ButtonUpThree;
-    public Button ButtonDownOne;
-    public Button ButtonDownTwo;
-    public Button ButtonDownThree;
+    public Button ButtonMainStart;
+    public Button ButtonMainIntro;
+    public Button ButtonMainQuit;
 
-    public Text Score;
-    public Text ScoreBoard;
-    public Text HighscoreBoard;
+    public Button ButtonIntroBack;
 
-    public Text TextLetterOne;
-    public Text TextLetterTwo;
-    public Text TextLetterThree;
+    public Button ButtonGameOverUpOne;
+    public Button ButtonGameOverUpTwo;
+    public Button ButtonGameOverUpThree;
+    public Button ButtonGameOverDownOne;
+    public Button ButtonGameOverDownTwo;
+    public Button ButtonGameOverDownThree;
+    public Button ButtonGameOverRestart;
+    public Button ButtonGameOverExit;
+
+    public TextMeshProUGUI TextScoreboardRequierd;
+    public TextMeshProUGUI TextScoreboardCurrent;
+
+    public Text TextGameOverScore;
+    public Text TextGameOverLeaderboard;
+    public Text TextGameOverLetterOne;
+    public Text TextGameOverLetterTwo;
+    public Text TextGameOverLetterThree;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        GameOverCanvas.SetActive(false);
+        GameOver.SetActive(false);
+        MainMenu.SetActive(true);
+        Intro.SetActive(false);
+
 
         Button btn;
 
-        btn = ButtonRestart.GetComponent<Button>();
+        btn = ButtonMainStart.GetComponent<Button>();
         btn.onClick.AddListener(newGame);
 
-        btn = ButtonQuit.GetComponent<Button>();
+        btn = ButtonMainIntro.GetComponent<Button>();
+        btn.onClick.AddListener(showIntro);
+
+        btn = ButtonMainQuit.GetComponent<Button>();
         btn.onClick.AddListener(quitGame);
 
-        btn = ButtonUpOne.GetComponent<Button>();
+        btn = ButtonIntroBack.GetComponent<Button>();
+        btn.onClick.AddListener(showMain);
+
+        btn = ButtonGameOverUpOne.GetComponent<Button>();
         btn.onClick.AddListener(incrementLetterOne);
 
-        btn = ButtonUpTwo.GetComponent<Button>();
+        btn = ButtonGameOverUpTwo.GetComponent<Button>();
         btn.onClick.AddListener(incrementLetterTwo);
 
-        btn = ButtonUpThree.GetComponent<Button>();
+        btn = ButtonGameOverUpThree.GetComponent<Button>();
         btn.onClick.AddListener(incrementLetterThree);
 
-        btn = ButtonDownOne.GetComponent<Button>();
+        btn = ButtonGameOverDownOne.GetComponent<Button>();
         btn.onClick.AddListener(decrementLetterOne);
 
-        btn = ButtonDownTwo.GetComponent<Button>();
+        btn = ButtonGameOverDownTwo.GetComponent<Button>();
         btn.onClick.AddListener(decrementLetterTwo);
 
-        btn = ButtonDownThree.GetComponent<Button>();
+        btn = ButtonGameOverDownThree.GetComponent<Button>();
         btn.onClick.AddListener(decrementLetterThree);
 
+        btn = ButtonGameOverExit.GetComponent<Button>();
+        btn.onClick.AddListener(showMain);
+
+        btn = ButtonGameOverRestart.GetComponent<Button>();
+        btn.onClick.AddListener(newGame);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.GameOver )
+        if (GameManager.Instance.GameOver)
         {
-            Score.text = "Your Score is: " + GameManager.Instance.Score;
-            GameOverCanvas.SetActive(true);
+            TextGameOverScore.text = GameManager.Instance.Score.ToString();
+            GameOver.SetActive(true);
         }
-        ScoreBoard.text = "Wall Points: " + GameManager.Instance.wallPoints
-            + "\nStack Points: " + GameManager.Instance.currentPoints
-            + "\nScore: " + GameManager.Instance.Score;
+        else
+        {
+            GameOver.SetActive(false);
+        }
+        TextScoreboardRequierd.text = GameManager.Instance.wallPoints.ToString();
+        TextScoreboardCurrent.text = GameManager.Instance.currentPoints.ToString();
         
         foreach(HighScore high in GameManager.Instance.HighScores)
         {
-            HighscoreBoard.text = HighscoreBoard.text + "\n" + high.playerName + ": " + high.playerScore;
+            TextGameOverLeaderboard.text = TextGameOverLeaderboard.text + "\n" + high.playerName + ": " + high.playerScore;
         }
+    }
+
+    void showIntro()
+    {
+        MainMenu.SetActive(false);
+        Intro.SetActive(true);
+    }
+
+    void showMain()
+    {
+        Intro.SetActive(false);
+        GameOver.SetActive(false);
+        MainMenu.SetActive(true);
     }
 
     void newGame()
     {
+        GameOver.SetActive(false);
+        Intro.SetActive(false);
+        MainMenu.SetActive(false);
         GameManager.Instance.SaveGame();
         GameManager.NewGame();
-        SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
+        //SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
     }
 
     void quitGame()
@@ -92,7 +136,7 @@ public class UIManager : MonoBehaviour
 
     void incrementLetterOne()
     {
-        int letterAscii = (int)TextLetterOne.text[0];
+        int letterAscii = (int)TextGameOverLetterOne.text[0];
         if (letterAscii == 32)
             letterAscii = 65;
         else if (letterAscii < 90)
@@ -100,12 +144,12 @@ public class UIManager : MonoBehaviour
         else
             letterAscii = 32;
         char letter = (char)letterAscii;
-        TextLetterOne.text = letter.ToString();
-        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+        TextGameOverLetterOne.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextGameOverLetterOne.text + TextGameOverLetterTwo.text + TextGameOverLetterThree.text;
     }
     void incrementLetterTwo()
     {
-        int letterAscii = (int)TextLetterTwo.text[0];
+        int letterAscii = (int)TextGameOverLetterTwo.text[0];
         if (letterAscii == 32)
             letterAscii = 65;
         else if (letterAscii < 90)
@@ -113,12 +157,12 @@ public class UIManager : MonoBehaviour
         else
             letterAscii = 32;
         char letter = (char)letterAscii;
-        TextLetterTwo.text = letter.ToString();
-        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+        TextGameOverLetterTwo.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextGameOverLetterOne.text + TextGameOverLetterTwo.text + TextGameOverLetterThree.text;
     }
     void incrementLetterThree()
     {
-        int letterAscii = (int)TextLetterThree.text[0];
+        int letterAscii = (int)TextGameOverLetterThree.text[0];
         if (letterAscii == 32)
             letterAscii = 65;
         else if (letterAscii < 90)
@@ -126,12 +170,12 @@ public class UIManager : MonoBehaviour
         else
             letterAscii = 32;
         char letter = (char)letterAscii;
-        TextLetterThree.text = letter.ToString();
-        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+        TextGameOverLetterThree.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextGameOverLetterOne.text + TextGameOverLetterTwo.text + TextGameOverLetterThree.text;
     }
     void decrementLetterOne()
     {
-        int letterAscii = (int)TextLetterOne.text[0];
+        int letterAscii = (int)TextGameOverLetterOne.text[0];
         if (letterAscii == 32)
             letterAscii = 90;
         else if (letterAscii > 65)
@@ -139,12 +183,12 @@ public class UIManager : MonoBehaviour
         else
             letterAscii = 32;
         char letter = (char)letterAscii;
-        TextLetterOne.text = letter.ToString();
-        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+        TextGameOverLetterOne.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextGameOverLetterOne.text + TextGameOverLetterTwo.text + TextGameOverLetterThree.text;
     }
     void decrementLetterTwo()
     {
-        int letterAscii = (int)TextLetterTwo.text[0];
+        int letterAscii = (int)TextGameOverLetterTwo.text[0];
         if (letterAscii == 32)
             letterAscii = 90;
         else if (letterAscii > 65)
@@ -152,12 +196,12 @@ public class UIManager : MonoBehaviour
         else
             letterAscii = 32;
         char letter = (char)letterAscii;
-        TextLetterTwo.text = letter.ToString();
-        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+        TextGameOverLetterTwo.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextGameOverLetterOne.text + TextGameOverLetterTwo.text + TextGameOverLetterThree.text;
     }
     void decrementLetterThree()
     {
-        int letterAscii = (int)TextLetterThree.text[0];
+        int letterAscii = (int)TextGameOverLetterThree.text[0];
         if (letterAscii == 32)
             letterAscii = 90;
         else if (letterAscii > 65)
@@ -165,7 +209,7 @@ public class UIManager : MonoBehaviour
         else
             letterAscii = 32;
         char letter = (char)letterAscii;
-        TextLetterThree.text = letter.ToString();
-        GameManager.Instance.PlayerName = TextLetterOne.text + TextLetterTwo.text + TextLetterThree.text;
+        TextGameOverLetterThree.text = letter.ToString();
+        GameManager.Instance.PlayerName = TextGameOverLetterOne.text + TextGameOverLetterTwo.text + TextGameOverLetterThree.text;
     }
 }

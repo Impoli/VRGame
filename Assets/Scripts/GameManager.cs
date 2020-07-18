@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject LeftHand;
     public GameObject Player;
     public bool GameOver { get; set; } = false;
+    public bool GameStarted { get; set; } = false;
     public bool templateIsEnabled { get; private set; } = false;
 
     public string PlayerName { get; set; } = "p1 ";
@@ -49,12 +50,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSum += Time.deltaTime;
-        if(timeSum >= tutorialTime)
-        {
-            tutorialEnded = true;
-        }
-
         if(RightHand.transform.childCount <= 3)
         {
             OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
@@ -63,17 +58,8 @@ public class GameManager : MonoBehaviour
         {
             OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
         }
-        if(Player.transform.position.z < -0.1 || Player.transform.position.z > 0.1)
-        {
-            Player.SetActive(false);
-            Player.transform.position = new Vector3(0f, Player.transform.position.y, 0f);
-            Player.SetActive(true);
-        }
-        if (OVRInput.Get(OVRInput.Button.Three))
-        {
-            NewGame();
-            SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
-        }
+        if (GameOver)
+            GameStarted = false;
 
     }
 
@@ -86,6 +72,7 @@ public class GameManager : MonoBehaviour
         GameManager.Instance.wallPoints = 0;
         GameManager.Instance.currentWallGapX = 0;
         GameManager.Instance.GameOver = false;
+        GameManager.Instance.GameStarted = true;
         GameManager.Instance.templateIsEnabled = false;
         GameManager.Instance.HighScores = IOManager.ReadSave();
         GameManager.Instance.wallSpeedNormal = 0.5f;
