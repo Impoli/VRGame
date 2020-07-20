@@ -29,7 +29,7 @@ public class BlockPoints : MonoBehaviour
             GetComponent<MeshRenderer>().material = standartMaterial;
         }
 
-        if (!GameManager.Instance.wallIsAlive)
+        if (GameManager.Instance.despawnBlocks)
         {
             if (!inErrorPosition && isInPointsArea)
             {
