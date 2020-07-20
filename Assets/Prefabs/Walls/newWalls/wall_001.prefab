@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12d8208f69f3a04f977e00171402281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPoints: 150
+  wallPoints: 140
 --- !u!82 &6276334233274509174
 AudioSource:
   m_ObjectHideFlags: 0
