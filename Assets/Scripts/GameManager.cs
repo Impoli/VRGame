@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
         GameManager.Instance.GameOver = false;
         GameManager.Instance.GameStarted = true;
         GameManager.Instance.templateIsEnabled = false;
+        GameManager.Instance.HighScores = new List<HighScore>();
         GameManager.Instance.HighScores = IOManager.ReadSave();
         GameManager.Instance.wallSpeedNormal = 0.5f;
         GameManager.Instance.wallSpeedFast = 2f;

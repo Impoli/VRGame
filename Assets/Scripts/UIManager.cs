@@ -38,7 +38,6 @@ public class UIManager : MonoBehaviour
     public Text TextGameOverLetterTwo;
     public Text TextGameOverLetterThree;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +92,7 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance.GameOver)
         {
             TextGameOverScore.text = GameManager.Instance.Score.ToString();
+            updateHighscore();
             GameOver.SetActive(true);
             clipboard.SetActive(true);
         }
@@ -104,9 +104,16 @@ public class UIManager : MonoBehaviour
         TextScoreboardCurrent.text = GameManager.Instance.currentPoints.ToString();
         TextScoreboardScore.text = GameManager.Instance.Score.ToString();
 
+        
+    }
+
+    void updateHighscore()
+    {
+        TextGameOverLeaderboard.text = "";
         foreach (HighScore high in GameManager.Instance.HighScores)
         {
-            TextGameOverLeaderboard.text = TextGameOverLeaderboard.text + "\n" + high.playerName + ": " + high.playerScore;
+            if (high.playerScore > 0)
+                TextGameOverLeaderboard.text = TextGameOverLeaderboard.text + "\n" + high.playerName + ": " + high.playerScore;
         }
     }
 
@@ -121,24 +128,24 @@ public class UIManager : MonoBehaviour
         Intro.SetActive(false);
         GameManager.Instance.GameOver = false;
         GameManager.Instance.GameStarted = false;
+        GameManager.Instance.SaveGame();
         GameOver.SetActive(false);
         MainMenu.SetActive(true);
     }
 
     void newGame()
     {
+        if(GameOver.activeSelf)
+            GameManager.Instance.SaveGame();
         GameOver.SetActive(false);
         Intro.SetActive(false);
         MainMenu.SetActive(false);
         clipboard.SetActive(false);
-        GameManager.Instance.SaveGame();
         GameManager.NewGame();
-        //SceneManager.LoadScene("VR_Scene", LoadSceneMode.Single);
     }
 
     void quitGame()
     {
-        GameManager.Instance.SaveGame();
         Application.Quit();
     }
 
