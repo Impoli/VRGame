@@ -32,7 +32,7 @@ public class WallPoints : MonoBehaviour
     void Update()
     {
         float currDistance = Mathf.Abs(GameObject.Find("Podest_schiene").transform.position.z - transform.position.z);
-        audioSource.volume = (1 * 0.6f) - (currDistance/ startDistanceToPodest * 0.6f);
+        audioSource.volume = (1 * 0.4f) - ((currDistance)/ (startDistanceToPodest - 5) * 0.4f);
 
         GameManager.Instance.setCurrentWallGapX(refCube.GetComponent<Renderer>().bounds.size.x);
 
@@ -48,6 +48,7 @@ public class WallPoints : MonoBehaviour
             gameObject.GetComponentInChildren<MeshCollider>().enabled = false;
             gameObject.GetComponent<WallMovement>().enabled = false;
             transform.position += new Vector3(0, -1f * Time.deltaTime, 0);
+            audioSource.volume = (1 * 0.6f) + (transform.position.y * 0.5f);
 
             if (GameManager.Instance.points < wallPoints)
             {
