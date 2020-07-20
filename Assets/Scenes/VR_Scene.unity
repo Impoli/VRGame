@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1555248870}
-  m_IndirectSpecularColor: {r: 0.18092209, g: 0.22647172, b: 0.30723852, a: 1}
+  m_IndirectSpecularColor: {r: 0.18092233, g: 0.22647251, b: 0.30723983, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4083,6 +4083,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983397160}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &989409889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1552c61a98ece4a44aa1d37805f331b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 686812197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &997242606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7123,7 +7129,9 @@ MonoBehaviour:
   GameOver: {fileID: 901676646}
   MainMenu: {fileID: 1000900114}
   Intro: {fileID: 576597008}
-  clipboard: {fileID: 640257763}
+  ClipboardMain: {fileID: 640257763}
+  ClipboardScore: {fileID: 989409889}
+  Scoreboard: {fileID: 1025255763}
   ButtonMainStart: {fileID: 465824553}
   ButtonMainIntro: {fileID: 1050363288}
   ButtonMainQuit: {fileID: 320495717}

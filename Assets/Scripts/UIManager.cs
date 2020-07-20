@@ -10,7 +10,9 @@ public class UIManager : MonoBehaviour
     public GameObject GameOver;
     public GameObject MainMenu;
     public GameObject Intro;
-    public GameObject clipboard;
+    public GameObject ClipboardMain;
+    public GameObject ClipboardScore;
+    public GameObject Scoreboard;
 
 
     public Button ButtonMainStart;
@@ -44,7 +46,7 @@ public class UIManager : MonoBehaviour
         GameOver.SetActive(false);
         MainMenu.SetActive(true);
         Intro.SetActive(false);
-        clipboard.SetActive(true);
+        ClipboardMain.SetActive(true);
 
 
         Button btn;
@@ -94,7 +96,7 @@ public class UIManager : MonoBehaviour
             TextGameOverScore.text = GameManager.Instance.Score.ToString();
             updateHighscore();
             GameOver.SetActive(true);
-            clipboard.SetActive(true);
+            ClipboardMain.SetActive(true);
         }
         else
         {
@@ -103,6 +105,17 @@ public class UIManager : MonoBehaviour
         TextScoreboardRequierd.text = GameManager.Instance.wallPoints.ToString();
         TextScoreboardCurrent.text = GameManager.Instance.currentPoints.ToString();
         TextScoreboardScore.text = GameManager.Instance.Score.ToString();
+
+        if(GameOver.activeSelf || MainMenu.activeSelf || Intro.activeSelf)
+        {
+            ClipboardScore.SetActive(false);
+            Scoreboard.SetActive(false);
+        }
+        else
+        {
+            ClipboardScore.SetActive(true);
+            Scoreboard.SetActive(true);
+        }
 
         
     }
@@ -140,7 +153,7 @@ public class UIManager : MonoBehaviour
         GameOver.SetActive(false);
         Intro.SetActive(false);
         MainMenu.SetActive(false);
-        clipboard.SetActive(false);
+        ClipboardMain.SetActive(false);
         GameManager.NewGame();
     }
 
