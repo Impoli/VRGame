@@ -36,8 +36,8 @@ public class WallSpawner : MonoBehaviour
                 Vector3 pos = transform.position;
                 newBlock.transform.position = new Vector3(pos.x, pos.y, pos.z);
                 GameManager.Instance.setWallIsAlive(true);
+                GameManager.Instance.setDespawnBlocks(false);
             }
-            
         }
     }
 }

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int Score { get; private set; } = 0;
 
     public bool wallIsAlive { get; private set; } = false;
+    public bool despawnBlocks { get; private set; } = false;
     public int wallPoints { get; private set; } = 0;
     public float wallSpeedNormal { get; set; } = 0.5f;
     public float wallSpeedFast { get; set; } = 2f;
@@ -105,6 +106,11 @@ public class GameManager : MonoBehaviour
     public void setWallIsAlive(bool isAlive)
     {
         wallIsAlive = isAlive;
+    }
+
+    public void setDespawnBlocks(bool isAlive)
+    {
+        despawnBlocks = isAlive;
     }
 
     public void setWallPoints(int points)

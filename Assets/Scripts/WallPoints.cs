@@ -49,6 +49,7 @@ public class WallPoints : MonoBehaviour
             gameObject.GetComponent<WallMovement>().enabled = false;
             transform.position += new Vector3(0, -1f * Time.deltaTime, 0);
             audioSource.volume = (1 * 0.6f) + (transform.position.y * 0.5f);
+            GameManager.Instance.setDespawnBlocks(true);
 
             if (GameManager.Instance.points < wallPoints)
             {
