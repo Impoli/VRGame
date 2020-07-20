@@ -119,6 +119,8 @@ public class UIManager : MonoBehaviour
     void showMain()
     {
         Intro.SetActive(false);
+        GameManager.Instance.GameOver = false;
+        GameManager.Instance.GameStarted = false;
         GameOver.SetActive(false);
         MainMenu.SetActive(true);
     }
